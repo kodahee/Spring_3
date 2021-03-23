@@ -14,7 +14,11 @@ public class BankBookDAO {
 	
 	private final String NAMESPACE = "com.lalalala.s3.bankbook.BankBookDAO";
 	
-	public int setWrite(BankBookDTO bankbookDTO)throws Exception{
+	public int setDelete(BankBookDTO bankbookDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+".setDelete", bankbookDTO);
+	}
+	
+	public int setWrite(BankBookDTO bankbookDTO) throws Exception {
 		int result = sqlSession.insert(NAMESPACE+".setWrite", bankbookDTO);
 		return result;
 	}

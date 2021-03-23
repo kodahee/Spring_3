@@ -18,4 +18,8 @@
 	<select id="getList" resultType="com.lalalala.s3.bankbook.BankBookDTO">
 		select * from bankbook order by bookNumber desc
 	</select>
+	
+	<delete id="setDelete" parameterType="com.lalalala.s3.bankbook.BankBookDTO">
+		DELETE FROM BANKBOOK WHERE BOOKNUMBER = #{bookNumber}
+	</delete>
 </mapper>
