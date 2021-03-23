@@ -20,7 +20,10 @@ public class MemberTest extends MyAbstractTest {
 //	}
 	
 	@Test
-	public void memberLogin(MemberDTO memberDTO) throws Exception {
+	public void memberLogin() throws Exception {
+		MemberDTO memberDTO = new MemberDTO();
+		memberDTO.setId("iu");
+		memberDTO.setPw("pw1");
 		memberDTO = memberDAO.memberLogin(memberDTO);
 		assertNotNull(memberDTO);
 	}
