@@ -22,4 +22,9 @@
 	<delete id="setDelete" parameterType="com.lalalala.s3.bankbook.BankBookDTO">
 		DELETE FROM BANKBOOK WHERE BOOKNUMBER = #{bookNumber}
 	</delete>
+	
+	<update id="setUpdate" parameterType="com.lalalala.s3.bankbook.BankBookDTO">
+		UPDATE BANKBOOK SET BOOKNAME = #{bookName}, BOOKRATE = #{bookRate}, BOOKSALE = #{bookSale} WHERE BOOKNUMBER = #{bookNumber}
+	</update>
+	
 </mapper>

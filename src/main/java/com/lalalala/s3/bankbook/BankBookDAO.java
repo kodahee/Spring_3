@@ -14,6 +14,10 @@ public class BankBookDAO {
 	
 	private final String NAMESPACE = "com.lalalala.s3.bankbook.BankBookDAO";
 	
+	public int setUpdate(BankBookDTO bankbookDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+".setUpdate", bankbookDTO);
+	}
+	
 	public int setDelete(BankBookDTO bankbookDTO) throws Exception {
 		return sqlSession.delete(NAMESPACE+".setDelete", bankbookDTO);
 	}
