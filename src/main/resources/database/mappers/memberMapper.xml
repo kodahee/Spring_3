@@ -8,5 +8,15 @@
 	<insert id="memberJoin" parameterType="com.lalalala.s3.member.MemberDTO">
 		insert into member values(#{id}, #{pw}, #{name}, #{phone}, #{email})
 	</insert>
+	
+	<select id="memberLogin" parameterType="com.lalalala.s3.member.MemberDTO">
+		SELECT * FROM MEMBER WHERE id=#{id} AND pw=#{pw}
+	</select>
+	
+	<update id="memberUpdate" parameterType="com.lalalala.s3.member.MemberDTO">
+		UPDATE MEMBER SET PW = #{pw}, NAME = #{name}, PHONE = #{phone}, EMAIL= #{email}, WHERE ID = #{id}
+	</update>
+	
+	
 
 </mapper>

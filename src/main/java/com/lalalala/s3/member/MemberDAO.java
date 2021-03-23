@@ -19,7 +19,7 @@ public class MemberDAO {
 	
 //	public int memberUpdate(MemberDTO memberDTO) throws Exception {
 //		// id를 제외하고 나머지 수정
-//		return ;
+//		return sqlSession.update(NAMESPACE+"memberUpdate", memberDTO);
 //	}
 	
 //	public int memberDelete(MemberDTO memberDTO) throws Exception {
@@ -31,9 +31,9 @@ public class MemberDAO {
 		return sqlSession.insert(NAMESPACE+"memberJoin", memberDTO);
 	}
 
-//	public MemberDTO memberLogin(MemberDTO memberDTO) throws Exception {
-//		return ;
-//	}
+	public MemberDTO memberLogin(MemberDTO memberDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"memberLogin", memberDTO);
+	}
 
 
 }
