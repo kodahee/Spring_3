@@ -2,6 +2,8 @@ package com.lalalala.s3.bankbook;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,6 +15,18 @@ public class BankBookDAOTest extends MyAbstractTest {
 	private BankBookDAO bankbookDAO;
 	
 	@Test
+	public void getListTest() throws Exception {
+		List<BankBookDTO> ar = bankbookDAO.getList();
+		assertNotEquals(0, ar.size());
+	}
+	
+//	@Test
+	public void getSelectTest() throws Exception {
+		BankBookDTO bankbookDTO = bankbookDAO.getSelect(null);
+		assertNotNull(bankbookDTO);
+	}
+	
+//	@Test
 	public void setWriteTest() throws Exception {
 		BankBookDTO bankbookDTO = new BankBookDTO();
 		bankbookDTO.setBookName("test");

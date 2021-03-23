@@ -1,6 +1,5 @@
 package com.lalalala.s3.bankbook;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -22,14 +21,15 @@ public class BankBookDAO {
 
 
 	public BankBookDTO getSelect(BankBookDTO bankbookDTO) throws Exception {
+		//long num = 1L;
+		bankbookDTO = sqlSession.selectOne(NAMESPACE+".getSelect", bankbookDTO);
 		return bankbookDTO;
 	}
 
 	// getList
 	// bankbook table의 모든 데이터 조회 후 리턴
 	public List<BankBookDTO> getList() throws Exception {
-		ArrayList<BankBookDTO> ar = new ArrayList<BankBookDTO>();
-		return ar;
+		return sqlSession.selectList(NAMESPACE+".getList");
 	}
 
 }

@@ -10,4 +10,12 @@
 	<insert id="setWrite" parameterType="com.lalalala.s3.bankbook.BankBookDTO">
 		insert into bankbook values(bank_seq.nextval,#{bookName},#{bookRate},#{bookSale})
 	</insert>
+	
+	<select id="getSelect" parameterType="java.lang.Long" resultType="com.lalalala.s3.bankbook.BankBookDTO">
+		select * from bankbook where bookNumber=#{bookNumber}
+	</select>
+	
+	<select id="getList" resultType="com.lalalala.s3.bankbook.BankBookDTO">
+		select * from bankbook order by bookNumber desc
+	</select>
 </mapper>
