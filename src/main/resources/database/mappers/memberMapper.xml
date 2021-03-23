@@ -13,8 +13,8 @@
 		SELECT * FROM MEMBER WHERE id=#{id} AND pw=#{pw}
 	</select>
 	
-	<!-- <update id="memberUpdate" parameterType="com.lalalala.s3.member.MemberDTO">
+	<update id="memberUpdate" parameterType="com.lalalala.s3.member.MemberDTO">
 		UPDATE MEMBER SET PW = #{pw}, NAME = #{name}, PHONE = #{phone}, EMAIL= #{email}, WHERE ID = #{id}
-	</update> -->
+	</update>
 	
 </mapper>

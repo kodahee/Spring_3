@@ -13,13 +13,20 @@ public class MemberTest extends MyAbstractTest {
 	@Autowired
 	private MemberDAO memberDAO;
 	
-//	public void memberUpdate(MemberDTO memberDTO) throws Exception {
-//		memberDTO.setId("t1");
-//		memberDTO = memberDAO.getList(memberDTO);
-//		
-//	}
-	
 	@Test
+	public void memberUpdate(MemberDTO memberDTO) throws Exception {
+		memberDTO.setId("t1");
+		memberDTO = memberDAO.memberLogin(memberDTO);
+		memberDTO.setPw("pw");
+		memberDTO.setName("tname");
+		memberDTO.setPhone("01012121212");
+		memberDTO.setEmail("tname@gmail.com");
+		
+		int result = memberDAO.memberUpdate(memberDTO);
+		assertEquals(1, result);
+	}
+	
+//	@Test
 	public void memberLogin() throws Exception {
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO.setId("iu");
