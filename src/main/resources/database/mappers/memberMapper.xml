@@ -14,7 +14,7 @@
 	</select>
 	
 	<update id="memberUpdate" parameterType="com.lalalala.s3.member.MemberDTO">
-		UPDATE MEMBER SET PW = #{pw}, NAME = #{name}, PHONE = #{phone}, EMAIL= #{email}, WHERE ID = #{id}
+		UPDATE MEMBER SET PW = #{pw}, NAME = #{name}, PHONE = #{phone}, EMAIL= #{email} WHERE ID = #{id}
 	</update>
 	
 </mapper>
