@@ -13,7 +13,7 @@ public class MemberTest extends MyAbstractTest {
 	@Autowired
 	private MemberDAO memberDAO;
 	
-	@Test
+//	@Test
 	public void memberDelete() throws Exception {
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO.setId("id7");
@@ -21,14 +21,15 @@ public class MemberTest extends MyAbstractTest {
 		assertEquals(1, result);
 	}
 	
-//	@Test
+	@Test
 	public void memberUpdate() throws Exception {
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO.setId("t1");
-		memberDTO.setPw("pw");
-		memberDTO.setName("tname");
-		memberDTO.setPhone("01012121212");
-		memberDTO.setEmail("tname@gmail.com");
+		memberDTO = memberDAO.memberSelect(memberDTO);
+//		memberDTO.setPw("pw");
+//		memberDTO.setName("tname");
+		memberDTO.setPhone("01034343434");
+//		memberDTO.setEmail("tname@gmail.com");
 		
 		int result = memberDAO.memberUpdate(memberDTO);
 		assertEquals(1, result);
