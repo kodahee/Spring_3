@@ -28,7 +28,7 @@ public class MemberTest extends MyAbstractTest {
 		memberDTO = memberDAO.memberSelect(memberDTO);
 //		memberDTO.setPw("pw");
 //		memberDTO.setName("tname");
-		memberDTO.setPhone("01034343434");
+		memberDTO.setPhone("01054545454");
 //		memberDTO.setEmail("tname@gmail.com");
 		
 		int result = memberDAO.memberUpdate(memberDTO);
