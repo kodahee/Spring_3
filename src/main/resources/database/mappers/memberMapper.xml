@@ -6,7 +6,7 @@
     
 <mapper namespace="com.lalalala.s3.member">
 	<insert id="memberJoin" parameterType="com.lalalala.s3.member.MemberDTO">
-		insert into member values(?, ?, ?, ?, ?)
+		insert into member values(#{id}, #{pw}, #{name}, #{phone}, #{email})
 	</insert>
 
 </mapper>

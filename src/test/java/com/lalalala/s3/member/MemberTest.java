@@ -13,6 +13,11 @@ public class MemberTest extends MyAbstractTest {
 	
 	public void memberJoin() throws Exception {
 		MemberDTO memberDTO = new MemberDTO();
+		memberDTO.setId("t1");
+		memberDTO.setPw("t1pw");
+		memberDTO.setName("t1");
+		memberDTO.setPhone("01012341234");
+		memberDTO.setEmail("t1@naver.com");
 		int result = memberDAO.memberJoin(memberDTO);
 		assertEquals(1, result);
 	}
