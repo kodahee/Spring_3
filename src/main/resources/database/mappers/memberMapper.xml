@@ -17,4 +17,8 @@
 		UPDATE MEMBER SET PW = #{pw}, NAME = #{name}, PHONE = #{phone}, EMAIL= #{email} WHERE ID = #{id}
 	</update>
 	
+	<delete id="memberDelete" parameterType="com.lalalala.s3.member.MemberDTO">
+		DELETE FROM MEMBER WHERE ID = #{id}
+	</delete>
+	
 </mapper>

@@ -13,6 +13,12 @@ public class MemberTest extends MyAbstractTest {
 	@Autowired
 	private MemberDAO memberDAO;
 	
+	public void memberDelete(MemberDTO memberDTO) throws Exception {
+		memberDTO.setId("id7");
+		int result = memberDAO.memberDelete(memberDTO);
+		assertEquals(1, result);
+	}
+	
 	@Test
 	public void memberUpdate() throws Exception {
 		MemberDTO memberDTO = new MemberDTO();

@@ -22,9 +22,9 @@ public class MemberDAO {
 		return sqlSession.update(NAMESPACE+"memberUpdate", memberDTO);
 	}
 	
-//	public int memberDelete(MemberDTO memberDTO) throws Exception {
-//		return ;
-//	}
+	public int memberDelete(MemberDTO memberDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"memberDelete", memberDTO);
+	}
 
 	//memberJoin 데이터를 받아서 DB에 insert 하는 메서드
 	public int memberJoin(MemberDTO memberDTO) throws Exception {
