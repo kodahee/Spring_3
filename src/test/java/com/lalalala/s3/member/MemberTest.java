@@ -2,6 +2,7 @@ package com.lalalala.s3.member;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.lalalala.s3.MyAbstractTest;
@@ -11,6 +12,7 @@ public class MemberTest extends MyAbstractTest {
 	@Autowired
 	private MemberDAO memberDAO;
 	
+	@Test
 	public void memberJoin() throws Exception {
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO.setId("t1");
