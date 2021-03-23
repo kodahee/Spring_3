@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<!-- namespace가 절대 중복되면 안됨, namespace로 구분 -->
+<!-- mapper를 사용할 dao의 패키지명 -->
+<mapper namespace="com.lalalala.s3.bankbook.BankBookDAO">
+	<!-- 동일한 mapper내에서는 id가 중복되면 안됨 -->
+	<insert id="setWrite" parameterType="com.lalalala.s3.bankbook.BankBookDTO">
+		insert into bankbook values(bank_seq.nextval,#{bookName},#{bookRate},#{bookSale})
+	</insert>
+</mapper>
