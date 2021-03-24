@@ -17,12 +17,17 @@ public class BankBookController {
 	private BankBookService bankbookService;
 	
 	@RequestMapping(value = "bankbookUpdate")
-	public void setUpdate() throws Exception {
-
+	public void setUpdate(BankBookDTO bankbookDTO, Model model) throws Exception {
+		bankbookDTO = bankbookService.getSelect(bankbookDTO);
+		model.addAttribute("dto", bankbookDTO);
 	}
 	
 	@RequestMapping(value = "bankbookUpdate", method = RequestMethod.POST)
 	public String setUpdate(BankBookDTO bankbookDTO) throws Exception {
+//		System.out.println("Update Post");
+//		System.out.println(bankbookDTO.getBookName());
+//		System.out.println(bankbookDTO.getBookRate());
+//		System.out.println(bankbookDTO.getBookSale());
 		int result = bankbookService.setUpdate(bankbookDTO);
 		return "redirect:./bankbookList";
 	}
