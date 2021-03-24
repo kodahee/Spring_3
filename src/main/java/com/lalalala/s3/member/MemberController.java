@@ -1,5 +1,7 @@
 package com.lalalala.s3.member;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value = "/member/")
+@RequestMapping(value = "/member/*")
 public class MemberController {
 	
 	@Autowired
@@ -20,15 +22,10 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "memberLogin", method = RequestMethod.POST)
-	public ModelAndView memberLogin(MemberDTO memberDTO, ModelAndView modelAndView) throws Exception {
+	public String memberLogin(MemberDTO memberDTO, HttpSession session) throws Exception {
 		memberDTO = memberService.memberLogin(memberDTO);
-		modelAndView.addObject("dto", memberDTO);
-		if(memberDTO != null) {		// 로그인 성공시 인덱스페이지
-			modelAndView.setViewName("redirect:../");
-		} else {					// 로그인 실패시 다시 로그인
-			modelAndView.setViewName("/member/memberLogin");
-		}
-		return modelAndView;
+		session.setAttribute("member", memberDTO);
+		return "redirect:../";
 	}
 	
 	@RequestMapping(value = "memberJoin")
