@@ -11,6 +11,10 @@ public class BankBookService {		// annocation, xml에 설정
 	@Autowired
 	private BankBookDAO bankbookDAO;		// Dependency Injection
 	
+	public int setUpdate(BankBookDTO bankbookDTO) throws Exception {
+		return bankbookDAO.setUpdate(bankbookDTO);
+	}
+	
 	public int setDelete(BankBookDTO bankbookDTO) throws Exception {
 		return bankbookDAO.setDelete(bankbookDTO);
 	}

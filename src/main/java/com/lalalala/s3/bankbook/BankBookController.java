@@ -16,6 +16,17 @@ public class BankBookController {
 	@Autowired
 	private BankBookService bankbookService;
 	
+	@RequestMapping(value = "bankbookUpdate")
+	public void setUpdate() throws Exception {
+
+	}
+	
+	@RequestMapping(value = "bankbookUpdate", method = RequestMethod.POST)
+	public String setUpdate(BankBookDTO bankbookDTO) throws Exception {
+		int result = bankbookService.setUpdate(bankbookDTO);
+		return "redirect:./bankbookList";
+	}
+	
 	@RequestMapping(value = "bankbookDelete")
 	public String setDelete(BankBookDTO bankbookDTO) throws Exception {
 		int result = bankbookService.setDelete(bankbookDTO);
