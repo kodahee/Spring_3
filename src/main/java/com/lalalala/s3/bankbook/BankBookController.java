@@ -17,11 +17,11 @@ public class BankBookController {
 	private BankBookService bankbookService;
 	
 	@RequestMapping(value = "bankbookDelete")
-	public ModelAndView setDelete(BankBookDTO bankbookDTO, ModelAndView modelAndView) throws Exception {
+	public String setDelete(BankBookDTO bankbookDTO) throws Exception {
 		int result = bankbookService.setDelete(bankbookDTO);
-		modelAndView.addObject("dto", bankbookDTO);
-		modelAndView.setViewName("redirect:bankbookList");
-		return modelAndView;
+//		modelAndView.addObject("dto", bankbookDTO);
+//		modelAndView.setViewName("redirect:bankbookList");
+		return "redirect:./bankbookList";
 	}
 	
 	@RequestMapping(value = "bankbookAdd")
