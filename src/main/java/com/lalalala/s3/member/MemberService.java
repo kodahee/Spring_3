@@ -12,5 +12,9 @@ public class MemberService {
 	public int memberJoin(MemberDTO memberDTO) throws Exception {
 		return memberDAO.memberJoin(memberDTO);
 	}
+	
+	public MemberDTO memberLogin(MemberDTO memberDTO) throws Exception {
+		return memberDAO.memberLogin(memberDTO);
+	}
 
 }
