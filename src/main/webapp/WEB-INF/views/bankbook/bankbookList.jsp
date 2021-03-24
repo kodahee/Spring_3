@@ -28,6 +28,7 @@
 				<td>${dto.bookSale}</td>
 			</tr>
 		</c:forEach>
+		<a href="./bankbookAdd">BankBook Add</a>
 		</tbody>
 		
 	</table>

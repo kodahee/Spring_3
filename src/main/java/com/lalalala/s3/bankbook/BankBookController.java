@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -14,6 +15,27 @@ public class BankBookController {
 	
 	@Autowired
 	private BankBookService bankbookService;
+	
+	@RequestMapping(value = "bankbookDelete")
+	public ModelAndView setDelete(BankBookDTO bankbookDTO, ModelAndView modelAndView) throws Exception {
+		int result = bankbookService.setDelete(bankbookDTO);
+		modelAndView.addObject("dto", bankbookDTO);
+		modelAndView.setViewName("redirect:bankbookList");
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "bankbookAdd")
+	public void setWrite() throws Exception {
+		
+	}
+	
+	@RequestMapping(value = "bankbookAdd", method = RequestMethod.POST)
+	public ModelAndView setWrite(BankBookDTO bankbookDTO, ModelAndView modelAndView) throws Exception {
+		int result = bankbookService.setWrite(bankbookDTO);
+		modelAndView.addObject("dto", bankbookDTO);
+		modelAndView.setViewName("redirect:bankbookList");
+		return modelAndView;
+	}
 	
 	@RequestMapping("bankbookList")		// url 주소 하나만 쓴다면 value 생략 가능
 	public void getList(Model model) throws Exception {
@@ -28,5 +50,5 @@ public class BankBookController {
 		modelAndView.setViewName("bankbook/bankbookSelect");
 		return modelAndView;
 	}
-
+	
 }
