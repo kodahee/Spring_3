@@ -6,8 +6,13 @@
     
 <mapper namespace="com.lalalala.s3.account.AccountDAO">
 
-	<select id="accountList" parameterType="com.lalalala.s3.account.AccountDTO" resultType="com.lalalala.s3.account.AccountDTO">
-		SELECT * FROM ACCOUNT WHERE ID = ${id}
+	<!-- parameterType과 resultType은 config.xml에서 alias 해줘야 간단하게 작성 가능 -->
+	<select id="getList" parameterType="AccountDTO" resultType="AccountDTO">
+		SELECT * FROM ACCOUNT WHERE ID = #{id}
 	</select>
+	
+	<insert id="setInsert" parameterType="AccountDTO">
+		insert into account values(#{accountNumber}, #{accountBalace}, sysdate, #{id}, #{bookNumber})
+	</insert>
 
 </mapper>

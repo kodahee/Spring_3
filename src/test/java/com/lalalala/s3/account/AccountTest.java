@@ -16,7 +16,8 @@ public class AccountTest {
 	public void accountListTest() throws Exception {
 		AccountDTO accountDTO = new AccountDTO();
 		accountDTO.setId("iu");
-		List<AccountDTO> ar = accountDAO.accountList(accountDTO);
+		System.out.println(accountDTO.getId());
+		List<AccountDTO> ar = accountDAO.getList(accountDTO);
 		assertNotEquals(0, ar.size());
 	}
 
