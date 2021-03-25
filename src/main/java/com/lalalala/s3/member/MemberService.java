@@ -9,6 +9,10 @@ public class MemberService {
 	@Autowired
 	private MemberDAO memberDAO;
 	
+	public int memberDelete(MemberDTO memberDTO) throws Exception {
+		return memberDAO.memberDelete(memberDTO);
+	}
+	
 	public int memberJoin(MemberDTO memberDTO) throws Exception {
 		return memberDAO.memberJoin(memberDTO);
 	}

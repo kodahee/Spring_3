@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -15,6 +16,13 @@ public class MemberController {
 	
 	@Autowired
 	private MemberService memberService;
+	
+	@RequestMapping(value = "memberDelete")
+	public String memberDelete(MemberDTO memberDTO, HttpSession session) throws Exception {
+		int result = memberService.memberDelete(memberDTO);
+		session.invalidate();
+		return "redirect:../";
+	}
 	
 	@RequestMapping(value = "memberMyPage")
 	public void memberMyPage() throws Exception {
