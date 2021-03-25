@@ -11,7 +11,7 @@
 
 	<h1>Account List Page</h1>
 	
-	<table>
+	<%-- <table>
 		<thead>
 			<tr>
 				<th>Name</th>
@@ -21,17 +21,17 @@
 		</thead>
 		
 		<tbody>
-		<%-- <c:forEach items="${list}" var="dto"> --%>
+		<c:forEach items="${list}" var="dto">
 			<tr>
 				<td>${dto.bookName}</td>
 				<td>${dto.bookRate}</td>
 				<td>${dto.bookSale}</td>
 			</tr>
-		<!-- </c:forEach>
-		<a href="../bankbook/bankbookAdd">BankBook Add</a> -->
+		</c:forEach>
+		<a href="../bankbook/bankbookAdd">BankBook Add</a> 
 		</tbody>
 		
-	</table>
+	</table> --%>
 
 </body>
 </html>
