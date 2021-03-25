@@ -20,7 +20,7 @@ public class AccountController {
 	private AccountService accountService;
 	
 	@RequestMapping(value = "accountList")
-	public void getList(AccountDTO accountDTO, Model model, HttpSession session) throws Exception {
+	public void getList(AccountDTO accountDTO, HttpSession session) throws Exception {
 		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
 		accountDTO.setId(memberDTO.getId());
 		List<AccountDTO> ar = accountService.getList(accountDTO);
@@ -28,13 +28,12 @@ public class AccountController {
 	}
 	
 	@RequestMapping(value = "setInsert")
-	public void setInsert() throws Exception {
+	public String setInsert(AccountDTO accountDTO, HttpSession session) throws Exception {
+		accountDTO = (AccountDTO)session.getAttribute("account");
 		
-	}
-	
-	@RequestMapping(value = "setInsert", method = RequestMethod.POST)
-	public void setInsert(AccountDTO accountDTO) throws Exception {
-		
+//		accountDTO.setAccountNumber(accountDTO.getBookNumber()+);
+		int result = accountService.setInsert(accountDTO);
+		return "redirect:accountList";
 	}
 	
 	

@@ -32,7 +32,6 @@
 				<td><a href="../bankbook/bankbookSelect?bookNumber=${list.bookNumber}">${list.bookNumber}</a></td>
 			</tr>
 		</c:forEach>
-		<a href="../bankbook/bankbookAdd">Add Account</a> 
 		</tbody>
 		
 	</table>
