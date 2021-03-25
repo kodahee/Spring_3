@@ -12,7 +12,8 @@
 	</select>
 	
 	<insert id="setInsert" parameterType="AccountDTO">
-		insert into account values(#{accountNumber}, #{accountBalace}, sysdate, #{id}, #{bookNumber})
+		insert into account values(#{accountNumber}, #{accountBalance}, sysdate, #{id}, #{bookNumber})
 	</insert>
+	
 
 </mapper>
