@@ -15,7 +15,7 @@ public class AccountTest extends MyAbstractTest {
 	@Autowired
 	private AccountDAO accountDAO;
 	
-	@Test
+//	@Test
 	public void setInsertTest() throws Exception {
 		AccountDTO accountDTO = new AccountDTO();
 		accountDTO.setAccountNumber("129-129-1299");
@@ -26,12 +26,13 @@ public class AccountTest extends MyAbstractTest {
 		assertEquals(1, result);
 	}
 	
-//	@Test
+	@Test
 	public void getListTest() throws Exception {
 		AccountDTO accountDTO = new AccountDTO();
 		accountDTO.setId("iu");
 		System.out.println(accountDTO.getId());
 		List<AccountDTO> ar = accountDAO.getList(accountDTO);
+		System.out.println(ar.get(0).getAccountNumber());
 		assertNotEquals(0, ar.size());
 	}
 

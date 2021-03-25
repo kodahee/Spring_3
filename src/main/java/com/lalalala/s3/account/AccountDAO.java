@@ -15,8 +15,7 @@ public class AccountDAO {
 	private final String NAMESPACE = "com.lalalala.s3.account.AccountDAO.";
 	
 	public List<AccountDTO> getList(AccountDTO accountDTO) throws Exception {
-		System.out.println("dao");
-		return sqlSession.selectList(NAMESPACE+"getList", accountDTO);
+		return sqlSession.selectList(NAMESPACE+"accountList", accountDTO);
 	}
 	
 	public int setInsert(AccountDTO accountDTO) throws Exception {

@@ -11,27 +11,31 @@
 
 	<h1>Account List Page</h1>
 	
-	<%-- <table>
+	<table>
 		<thead>
 			<tr>
-				<th>Name</th>
-				<th>Rate</th>
-				<th>Sale</th>
+				<th>Account Number</th>
+				<th>Balance</th>
+				<th>Date</th>
+				<th>ID</th>
+				<th>Book Number</th>
 			</tr>
 		</thead>
 		
 		<tbody>
-		<c:forEach items="${list}" var="dto">
+		<c:forEach items="${account}" var="list">
 			<tr>
-				<td>${dto.bookName}</td>
-				<td>${dto.bookRate}</td>
-				<td>${dto.bookSale}</td>
+				<td>${list.accountNumber}</td>
+				<td>${list.accountBalance}</td>
+				<td>${list.accountDate}</td>
+				<td>${list.id}</td>
+				<td><a href="../bankbook/bankbookSelect?bookNumber=${list.bookNumber}">${list.bookNumber}</a></td>
 			</tr>
 		</c:forEach>
-		<a href="../bankbook/bankbookAdd">BankBook Add</a> 
+		<a href="../bankbook/bankbookAdd">Add Account</a> 
 		</tbody>
 		
-	</table> --%>
+	</table>
 
 </body>
 </html>
