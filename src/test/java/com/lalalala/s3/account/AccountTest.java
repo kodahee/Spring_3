@@ -7,7 +7,9 @@ import java.util.List;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class AccountTest {
+import com.lalalala.s3.MyAbstractTest;
+
+public class AccountTest extends MyAbstractTest {
 	
 	@Autowired
 	private AccountDAO accountDAO;
