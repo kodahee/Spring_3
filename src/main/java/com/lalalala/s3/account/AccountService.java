@@ -11,8 +11,12 @@ public class AccountService {
 	@Autowired
 	private AccountDAO accountDAO;
 	
-	public List<AccountDTO> accountList(AccountDTO accountDTO) throws Exception {
-		return accountDAO.accountList(accountDTO);
+	public List<AccountDTO> getList(AccountDTO accountDTO) throws Exception {
+		return accountDAO.getList(accountDTO);
+	}
+	
+	public int setInsert(AccountDTO accountDTO) throws Exception {
+		return accountDAO.setInsert(accountDTO);
 	}
 
 }

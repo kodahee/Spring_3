@@ -1,5 +1,6 @@
 package com.lalalala.s3.account;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import java.util.List;
@@ -15,7 +16,18 @@ public class AccountTest extends MyAbstractTest {
 	private AccountDAO accountDAO;
 	
 	@Test
-	public void accountListTest() throws Exception {
+	public void setInsertTest() throws Exception {
+		AccountDTO accountDTO = new AccountDTO();
+		accountDTO.setAccountNumber("129-129-1299");
+		accountDTO.setAccountBalance(0);
+		accountDTO.setId("iu");
+		accountDTO.setBookNumber(3);
+		int result = accountDAO.setInsert(accountDTO);
+		assertEquals(1, result);
+	}
+	
+//	@Test
+	public void getListTest() throws Exception {
 		AccountDTO accountDTO = new AccountDTO();
 		accountDTO.setId("iu");
 		System.out.println(accountDTO.getId());

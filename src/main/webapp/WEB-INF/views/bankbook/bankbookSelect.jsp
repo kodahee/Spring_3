@@ -13,6 +13,8 @@
 
 	<h3>Name : ${dto.bookName}</h3>
 	<h3>Number : ${dto.bookNumber}</h3>
+	
+	<a href="./">계좌개설</a>
 
 	<c:catch>		<!-- java 에서의 try catch -->
 	<c:if test="${ member.id eq 'admin' }">
