@@ -33,5 +33,6 @@ public class NoticeDAO {
 	public int setDelete(NoticeDTO noticeDTO) throws Exception {
 		return sqlSession.delete(NAMESPACE+"noticeDelete", noticeDTO);
 	}
+	
 
 }
