@@ -41,13 +41,21 @@ public class NoticeDAOTest extends MyAbstractTest {
 		assertEquals(1, result);
 	}
 	
-	@Test
+//	@Test
 	public void setUpdate() throws Exception {
 		NoticeDTO noticeDTO = new NoticeDTO();
 		noticeDTO.setNum(3);
 		noticeDTO.setTitle("c");
 		noticeDTO.setContents("cc");
 		int result = noticeDAO.setUpdate(noticeDTO);
+		assertEquals(1, result);
+	}
+	
+	@Test
+	public void setDelete() throws Exception {
+		NoticeDTO noticeDTO = new NoticeDTO();
+		noticeDTO.setNum(4);
+		int result = noticeDAO.setDelete(noticeDTO);
 		assertEquals(1, result);
 	}
 

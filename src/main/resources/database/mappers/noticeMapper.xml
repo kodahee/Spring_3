@@ -20,6 +20,10 @@
 	<update id="noticeUpdate" parameterType="NoticeDTO">
 		UPDATE notice SET title = '${title}', contents = '${contents}', regDate = SYSDATE WHERE num = ${num}
 	</update>
+	
+	<delete id="noticeDelete" parameterType="NoticeDTO">
+		DELETE FROM notice WHERE num = ${num}
+	</delete>
 
 
 </mapper>
