@@ -12,6 +12,10 @@
 	<select id="noticeSelect" parameterType="NoticeDTO" resultType="NoticeDTO">
 		SELECT * FROM NOTICE WHERE num = ${num}
 	</select>
+	
+	<insert id="noticeInsert" parameterType="NoticeDTO">
+		INSERT INTO notice values(notice_seq.nextval, '${name}', '${title}', '${contents}', sysdate, 0)
+	</insert>
 
 
 </mapper>
