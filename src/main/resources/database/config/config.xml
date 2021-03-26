@@ -10,5 +10,6 @@
 		<typeAlias type="com.lalalala.s3.member.MemberDTO" alias="MemberDTO"/>
 		<typeAlias type="com.lalalala.s3.bankbook.BankBookDTO" alias="BankBookDTO"/>
 		<typeAlias type="com.lalalala.s3.account.AccountDTO" alias="AccountDTO"/>
+		<typeAlias type="com.lalalala.s3.notice.NoticeDTO" alias="NoticeDTO"/>
 	</typeAliases>
 </configuration>
