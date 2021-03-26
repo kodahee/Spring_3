@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.lalalala.s3.MyAbstractTest;
 
-public class AccountTest extends MyAbstractTest {
+public class AccountDAOTest extends MyAbstractTest {
 	
 	@Autowired
 	private AccountDAO accountDAO;

@@ -20,20 +20,21 @@ public class AccountController {
 	private AccountService accountService;
 	
 	@RequestMapping(value = "accountList")
-	public void getList(AccountDTO accountDTO, HttpSession session) throws Exception {
+	public void getList(AccountDTO accountDTO, HttpSession session, Model model) throws Exception {
+		// Service에서 해도 되고, mapper에서 parameterType을 memberDTO를 받아도 되고, String type을 선언해서 변수 하나만 받아도 됨
 		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
 		accountDTO.setId(memberDTO.getId());
 		List<AccountDTO> ar = accountService.getList(accountDTO);
-		session.setAttribute("account", ar);
+		model.addAttribute("account", ar);
 	}
 	
-	@RequestMapping(value = "setInsert")
+	@RequestMapping(value = "accountInsert")
 	public String setInsert(AccountDTO accountDTO, HttpSession session) throws Exception {
-		accountDTO = (AccountDTO)session.getAttribute("account");
+		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+		accountDTO.setId(memberDTO.getId());
 		
-//		accountDTO.setAccountNumber(accountDTO.getBookNumber()+);
 		int result = accountService.setInsert(accountDTO);
-		return "redirect:accountList";
+		return "redirect:./accountList";
 	}
 	
 	
