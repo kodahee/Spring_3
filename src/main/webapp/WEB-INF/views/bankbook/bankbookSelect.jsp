@@ -5,9 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<c:import url="../template/bootStrap.jsp"></c:import>
 <title>Insert title here</title>
 </head>
 <body>
+
+	<c:import url="../template/header.jsp"></c:import>
 
 	<h1>BankBook Select Page</h1>
 
