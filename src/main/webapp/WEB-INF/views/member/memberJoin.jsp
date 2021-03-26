@@ -12,8 +12,6 @@
 
 	<c:import url="../template/header.jsp"></c:import>
 
-	<h1>Member Join Page</h1>
-	
 	<div class="container">
 		<h2>Member Join Page</h2>
 		<form action="./memberJoin", method="post">

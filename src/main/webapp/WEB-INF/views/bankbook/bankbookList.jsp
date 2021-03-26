@@ -17,29 +17,30 @@
 
 	<c:import url="../template/header.jsp"></c:import>
 
-	<h1>BankBook List Page</h1>
-	
-	<table>
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Rate</th>
-				<th>Sale</th>
-			</tr>
-		</thead>
+	<div class="container">
+		<h2>BankBook List Page</h2>
 		
-		<tbody>
-		<c:forEach items="${list}" var="dto">
-			<tr>
-				<td><a href="./bankbookSelect?bookNumber=${dto.bookNumber}">${dto.bookName}</a></td>
-				<td>${dto.bookRate}</td>
-				<td>${dto.bookSale}</td>
-			</tr>
-		</c:forEach>
-		<a href="./bankbookAdd">BankBook Add</a>
-		</tbody>
-		
-	</table>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th scope="col">Name</th>
+					<th scope="col">Rate</th>
+					<th scope="col">Sale</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+			<c:forEach items="${list}" var="dto">
+				<tr>
+					<td><a href="./bankbookSelect?bookNumber=${dto.bookNumber}">${dto.bookName}</a></td>
+					<td>${dto.bookRate}</td>
+					<td>${dto.bookSale}</td>
+				</tr>
+			</c:forEach>
+			</tbody>
+			
+		</table>
+	</div>
 
 </body>
 </html>
