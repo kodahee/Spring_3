@@ -25,5 +25,9 @@ public class NoticeDAO {
 	public int setInsert(NoticeDTO noticeDTO) throws Exception {
 		return sqlSession.insert(NAMESPACE+"noticeInsert", noticeDTO);
 	}
+	
+	public int setUpdate(NoticeDTO noticeDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"noticeUpdate", noticeDTO);
+	}
 
 }

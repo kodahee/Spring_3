@@ -31,13 +31,23 @@ public class NoticeDAOTest extends MyAbstractTest {
 		assertNotNull(noticeDTO);
 	}
 	
-	@Test
+//	@Test
 	public void setInsert() throws Exception {
 		NoticeDTO noticeDTO = new NoticeDTO();
 		noticeDTO.setName("admin");
 		noticeDTO.setTitle("d");
 		noticeDTO.setContents("dd");
 		int result = noticeDAO.setInsert(noticeDTO);
+		assertEquals(1, result);
+	}
+	
+	@Test
+	public void setUpdate() throws Exception {
+		NoticeDTO noticeDTO = new NoticeDTO();
+		noticeDTO.setNum(3);
+		noticeDTO.setTitle("c");
+		noticeDTO.setContents("cc");
+		int result = noticeDAO.setUpdate(noticeDTO);
 		assertEquals(1, result);
 	}
 
