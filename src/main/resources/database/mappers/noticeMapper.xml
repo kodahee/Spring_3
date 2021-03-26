@@ -8,6 +8,10 @@
 	<select id="noticeList" parameterType="NoticeDTO" resultType="NoticeDTO">
 		SELECT * FROM NOTICE
 	</select>
+	
+	<select id="noticeSelect" parameterType="NoticeDTO" resultType="NoticeDTO">
+		SELECT * FROM NOTICE WHERE num = ${num}
+	</select>
 
 
 </mapper>

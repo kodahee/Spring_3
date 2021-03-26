@@ -1,6 +1,7 @@
 package com.lalalala.s3.notice;
 
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
@@ -14,11 +15,19 @@ public class NoticeDAOTest extends MyAbstractTest {
 	@Autowired
 	private NoticeDAO noticeDAO;
 	
-	@Test
+//	@Test
 	public void getList() throws Exception {
 		NoticeDTO noticeDTO = new NoticeDTO();
 		List<NoticeDTO> ar = noticeDAO.getList(noticeDTO);
 		assertNotEquals(0, ar.size());
+	}
+	
+	@Test
+	public void getSelect() throws Exception {
+		NoticeDTO noticeDTO = new NoticeDTO();
+		noticeDTO.setNum(2);
+		noticeDTO = noticeDAO.getSelect(noticeDTO);
+		assertNotNull(noticeDTO);
 	}
 
 }
