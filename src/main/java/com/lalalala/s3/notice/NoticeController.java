@@ -36,7 +36,6 @@ public class NoticeController {
 	@RequestMapping(value = "noticeInsert", method = RequestMethod.POST)
 	public String setInsert(NoticeDTO noticeDTO, HttpSession session) throws Exception {
 		int result = noticeService.setInsert(noticeDTO);
-		session.setAttribute("notice", noticeDTO);
 		return "redirect:noticeList";
 	}
 	
@@ -44,7 +43,6 @@ public class NoticeController {
 	public String noticeDelete(NoticeDTO noticeDTO, HttpSession session) throws Exception {
 		noticeDTO = (NoticeDTO)session.getAttribute("notice");
 		int result = noticeService.setDelete(noticeDTO);
-		System.out.println("DELETE : " + result);
 		return "redirect:noticeList";
 	}
 	
@@ -59,7 +57,7 @@ public class NoticeController {
 		if(result > 0) {
 			session.setAttribute("notice", noticeDTO);
 		}
-		return "redirect:noticeList";
+		return "redirect:noticeSelect";
 	}
 
 }

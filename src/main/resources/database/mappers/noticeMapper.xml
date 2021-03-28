@@ -14,11 +14,11 @@
 	</select>
 	
 	<insert id="noticeInsert" parameterType="NoticeDTO">
-		INSERT INTO notice values(notice_seq.nextval, '#{name}', '#{title}', '#{contents}', sysdate, 0)
+		INSERT INTO notice values(notice_seq.nextval, #{name}, #{title}, #{contents}, sysdate, 0)
 	</insert>
 	
 	<update id="noticeUpdate" parameterType="NoticeDTO">
-		UPDATE notice SET title = '#{title}', contents = '#{contents}', regDate = SYSDATE WHERE num = #{num}
+		UPDATE notice SET title = #{title}, contents = #{contents}, regDate = SYSDATE WHERE num = #{num}
 	</update>
 	
 	<delete id="noticeDelete" parameterType="NoticeDTO">
