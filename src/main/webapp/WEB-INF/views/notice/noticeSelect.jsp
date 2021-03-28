@@ -12,10 +12,8 @@
 
 	<c:import url="../template/header.jsp"></c:import>
 	
-	<h1>Notice Select</h1>
-	
 	<div class="container">
-		<h2>Notice List</h2>
+		<h2>Notice Select</h2>
 		
 		<table class="table table-hover">
 			<thead>
@@ -31,16 +29,18 @@
 			
 			<tbody>
 				<tr>
-					<td>${dto.num}</td>
-					<td>${dto.title}</td>
-					<td>${dto.name}</td>
-					<td>${dto.regDate}</td>
-					<td>${dto.hit}</td>
-					<td>${dto.contents}</td>
+					<td>${notice.num}</td>
+					<td>${notice.title}</td>
+					<td>${notice.name}</td>
+					<td>${notice.regDate}</td>
+					<td>${notice.hit}</td>
+					<td>${notice.contents}</td>
 				</tr>
 			</tbody>
 			
 		</table>
+		<a class="btn btn-primary" href="./noticeUpdate" role="button">수정</a>
+		<a class="btn btn-primary" href="./noticeDelete" role="button">삭제</a>
 	</div>
 
 </body>

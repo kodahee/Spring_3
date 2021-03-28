@@ -13,24 +13,20 @@
 	<c:import url="../template/header.jsp"></c:import>
 
 	<div class="container">
-		<h2>Notice Insert Page</h2>
+		<h2>Notice Select</h2>
 
-		<form action="./noticeInsert" method="post">
-			<%-- <div class="form-group">
-				<input class="form-control" type="text"
-					placeholder="${dto.name}" readonly>
-			</div> --%>
+		<form action="./noticeUpdate" method="post">
 			<div class="form-group">
 				<label for="exampleFormControlInput1">Name</label> 
-				<input class="form-control form-control-lg" type="text" name="name">
+				<input class="form-control form-control-lg" type="text" placeholder="${notice.name}" value="${notice.name}" name="name">
 			</div>
 			<div class="form-group">
 				<label for="exampleFormControlInput1">Title</label> 
-				<input class="form-control form-control-lg" type="text" name="title">
+				<input class="form-control form-control-lg" type="text" placeholder="${notice.title}" value="${notice.title}" name="title">
 			</div>
 			<div class="form-group">
 				<label for="exampleFormControlTextarea1">Contents</label>
-				<textarea class="form-control" id="contents" rows="10" name="contents"></textarea>
+				<textarea class="form-control" id="contents" rows="10" placeholder="${notice.contents}" value="${notice.contents}" name="contents"></textarea>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
@@ -38,6 +34,9 @@
 				</div>
 			</div>
 		</form>
+
+
 	</div>
+
 </body>
 </html>

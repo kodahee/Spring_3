@@ -29,7 +29,7 @@ public class NoticeController {
 	@RequestMapping(value = "noticeSelect")
 	public void getSelect(NoticeDTO noticeDTO, HttpSession session) throws Exception {
 		noticeDTO = noticeService.getSelect(noticeDTO);
-		session.setAttribute("dto", noticeDTO);
+		session.setAttribute("notice", noticeDTO);
 	}
 	
 	@RequestMapping(value = "noticeInsert")
@@ -42,6 +42,26 @@ public class NoticeController {
 //		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
 //		noticeDTO.setName(memberDTO.getName()); 
 		int result = noticeService.setInsert(noticeDTO);
+		return "redirect:noticeList";
+	}
+	
+	@RequestMapping(value = "noticeDelete")
+	public String noticeDelete(NoticeDTO noticeDTO, HttpSession session) throws Exception {
+		int result = noticeService.setDelete(noticeDTO);
+		return "redirect:noticeList";
+	}
+	
+	@RequestMapping(value = "noticeUpdate")
+	public void noticeUpdate() throws Exception {
+		
+	}
+	
+	@RequestMapping(value = "noticeUpdate", method = RequestMethod.POST)
+	public String noticeUpdate(NoticeDTO noticeDTO, HttpSession session) throws Exception {
+		int result = noticeService.setUpdate(noticeDTO);
+		if(result > 0) {
+			session.setAttribute("notice", noticeDTO);
+		}
 		return "redirect:noticeList";
 	}
 
