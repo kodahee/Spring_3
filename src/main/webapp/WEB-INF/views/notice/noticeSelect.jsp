@@ -39,8 +39,10 @@
 			</tbody>
 			
 		</table>
-		<a class="btn btn-primary" href="./noticeUpdate" role="button">수정</a>
-		<a class="btn btn-primary" href="./noticeDelete" role="button">삭제</a>
+		<c:if test="${member.name eq 'admin'}">
+			<a class="btn btn-primary" href="./noticeUpdate" role="button">수정</a>
+			<a class="btn btn-primary" href="./noticeDelete" role="button">삭제</a>
+		</c:if>
 	</div>
 
 </body>

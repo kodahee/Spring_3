@@ -39,7 +39,9 @@
 			</tbody>
 			
 		</table>
-		<a class="btn btn-primary" href="./noticeInsert" role="button">글작성</a>
+		<c:if test="${member.name eq 'admin'}">
+			<a class="btn btn-primary" href="./noticeInsert" role="button">글작성</a>
+		</c:if>
 	</div>
 
 </body>
