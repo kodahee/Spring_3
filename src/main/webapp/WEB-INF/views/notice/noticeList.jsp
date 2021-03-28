@@ -39,7 +39,7 @@
 			</tbody>
 			
 		</table>
-		<button href="./noticeInsert" class="btn btn-primary">글작성</button>
+		<a class="btn btn-primary" href="./noticeInsert" role="button">글작성</a>
 	</div>
 
 </body>
