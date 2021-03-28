@@ -13,21 +13,24 @@
 	<c:import url="../template/header.jsp"></c:import>
 
 	<div class="container">
-		<h2>Notice Select</h2>
+		<h2>Notice Update</h2>
 
 		<form action="./noticeUpdate" method="post">
 			<div class="form-group">
-				<label for="exampleFormControlInput1">Name</label> 
-				<input class="form-control form-control-lg" type="text" placeholder="${notice.name}" value="${notice.name}" name="name">
+				<label class="control-label col-sm-2" for="title">Title</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="title"
+						placeholder="Enter Title" name="title" value="${notice.title}">
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="exampleFormControlInput1">Title</label> 
-				<input class="form-control form-control-lg" type="text" placeholder="${notice.title}" value="${notice.title}" name="title">
+				<label class="control-label col-sm-2" for="contents">Contents</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="contents"
+						placeholder="Enter Contents" name="contents" value="${notice.contents}">
+				</div>
 			</div>
-			<div class="form-group">
-				<label for="exampleFormControlTextarea1">Contents</label>
-				<textarea class="form-control" id="contents" rows="10" placeholder="${notice.contents}" value="${notice.contents}" name="contents"></textarea>
-			</div>
+			
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 					<button type="submit" class="btn btn-primary">Submit</button>

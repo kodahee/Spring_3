@@ -43,6 +43,7 @@ public class NoticeController {
 	public String noticeDelete(NoticeDTO noticeDTO, HttpSession session) throws Exception {
 		noticeDTO = (NoticeDTO)session.getAttribute("notice");
 		int result = noticeService.setDelete(noticeDTO);
+		session.invalidate();
 		return "redirect:noticeList";
 	}
 	
@@ -53,7 +54,9 @@ public class NoticeController {
 	
 	@RequestMapping(value = "noticeUpdate", method = RequestMethod.POST)
 	public String noticeUpdate(NoticeDTO noticeDTO, HttpSession session) throws Exception {
+		noticeDTO = (NoticeDTO)session.getAttribute("notice");
 		int result = noticeService.setUpdate(noticeDTO);
+		System.out.println("UPDATE : " + result);
 		if(result > 0) {
 			session.setAttribute("notice", noticeDTO);
 		}
