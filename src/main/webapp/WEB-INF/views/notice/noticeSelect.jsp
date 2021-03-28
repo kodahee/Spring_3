@@ -12,6 +12,8 @@
 
 	<c:import url="../template/header.jsp"></c:import>
 	
+	<h1>Notice Select</h1>
+	
 	<div class="container">
 		<h2>Notice List</h2>
 		
@@ -23,23 +25,22 @@
 					<th scope="col">NAME</th>
 					<th scope="col">DATE</th>
 					<th scope="col">HIT</th>
+					<th scope="col">CONTENTS</th>
 				</tr>
 			</thead>
 			
 			<tbody>
-			<c:forEach items="${list}" var="list">
 				<tr>
-					<td>${list.num}</td>
-					<td><a href="./noticeSelect?num=${list.num}">${list.title}</a></td>
-					<td>${list.name}</td>
-					<td>${list.regDate}</td>
-					<td>${list.hit}</td>
+					<td>${dto.num}</td>
+					<td>${dto.title}</td>
+					<td>${dto.name}</td>
+					<td>${dto.regDate}</td>
+					<td>${dto.hit}</td>
+					<td>${dto.contents}</td>
 				</tr>
-			</c:forEach>
 			</tbody>
 			
 		</table>
-		<button href="./noticeInsert" class="btn btn-primary">글작성</button>
 	</div>
 
 </body>

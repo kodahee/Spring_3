@@ -19,5 +19,11 @@ public class NoticeController {
 		List<NoticeDTO> ar = noticeService.getList(noticeDTO);
 		model.addAttribute("list", ar);
 	}
+	
+	@RequestMapping(value = "noticeSelect")
+	public void getSelect(NoticeDTO noticeDTO, Model model) throws Exception {
+		noticeDTO = noticeService.getSelect(noticeDTO);
+		model.addAttribute("dto", noticeDTO);
+	}
 
 }
