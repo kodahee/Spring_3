@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.lalalala.s3.util.Pager;
 
 @Controller
 @RequestMapping(value = "/notice/*")
@@ -18,11 +21,14 @@ public class NoticeController {
 	private NoticeService noticeService;
 	
 	@RequestMapping(value = "noticeList")
-	public ModelAndView getList(long curPage) throws Exception {
+	public ModelAndView getList(Pager pager) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		List<NoticeDTO> ar = noticeService.getList(curPage);
+		System.out.println(pager.getCurPage());
+		List<NoticeDTO> ar = noticeService.getList(pager);
+		//List<NoticeDTO> ar = noticeService.getList(pager);
 		mv.addObject("list", ar);
 		mv.setViewName("notice/noticeList");
+		mv.addObject("pager", pager);
 		return mv;
 	}
 	

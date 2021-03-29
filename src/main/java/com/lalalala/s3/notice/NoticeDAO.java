@@ -40,5 +40,8 @@ public class NoticeDAO {
 		return sqlSession.delete(NAMESPACE+"noticeDelete", noticeDTO);
 	}
 	
+	public Long getTotalCount() throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"noticeCount");
+	}
 
 }

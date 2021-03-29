@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,10 +11,10 @@
 <body>
 
 	<c:import url="../template/header.jsp"></c:import>
-	
+
 	<div class="container">
 		<h2>Notice List</h2>
-		
+
 		<table class="table table-hover">
 			<thead>
 				<tr>
@@ -25,23 +25,35 @@
 					<th scope="col">HIT</th>
 				</tr>
 			</thead>
-			
+
 			<tbody>
-			<c:forEach items="${list}" var="list">
-				<tr>
-					<td>${list.num}</td>
-					<td><a href="./noticeSelect?num=${list.num}">${list.title}</a></td>
-					<td>${list.name}</td>
-					<td>${list.regDate}</td>
-					<td>${list.hit}</td>
-				</tr>
-			</c:forEach>
+				<c:forEach items="${list}" var="list">
+					<tr>
+						<td>${list.num}</td>
+						<td><a href="./noticeSelect?num=${list.num}">${list.title}</a></td>
+						<td>${list.name}</td>
+						<td>${list.regDate}</td>
+						<td>${list.hit}</td>
+					</tr>
+				</c:forEach>
 			</tbody>
-			
+
 		</table>
 		<c:if test="${member.name eq 'admin'}">
 			<a class="btn btn-primary" href="./noticeInsert" role="button">글작성</a>
 		</c:if>
+	</div>
+
+	<div class="container">
+		<ul class="pagination">
+			<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+			
+			<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
+				<li class="page-item"><a class="page-link" href="./noticeList?curPage=${i}">${i}</a></li>
+			</c:forEach>
+			
+			<li class="page-item"><a class="page-link" href="#">Next</a></li>
+		</ul>
 	</div>
 
 </body>
