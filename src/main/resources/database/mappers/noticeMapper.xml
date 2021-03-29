@@ -4,9 +4,12 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
-<mapper namespace="com.lalalala.s3.notice">
-	<select id="noticeList" parameterType="NoticeDTO" resultType="NoticeDTO">
-		SELECT * FROM NOTICE
+<mapper namespace="com.lalalala.s3.notice.NoticeDAO">
+	<select id="noticeList" parameterType="java.util.Map" resultType="NoticeDTO">
+		SELECT * FROM 
+		(SELECT rownum R, N.*
+		FROM (SELECT * FROM NOTICE WHERE NUM > 0 ORDER BY NUM desc) N)
+		WHERE R BETWEEN #{startRow} AND #{lastRow}
 	</select>
 	
 	<select id="noticeSelect" parameterType="NoticeDTO" resultType="NoticeDTO">

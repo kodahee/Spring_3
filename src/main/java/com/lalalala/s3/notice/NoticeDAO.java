@@ -1,5 +1,6 @@
 package com.lalalala.s3.notice;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -12,10 +13,13 @@ public class NoticeDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	private final String NAMESPACE = "com.lalalala.s3.notice.";
+	private final String NAMESPACE = "com.lalalala.s3.notice.NoticeDAO.";
 	
 	public List<NoticeDTO> getList(NoticeDTO noticeDTO) throws Exception {
-		return sqlSession.selectList(NAMESPACE+"noticeList", noticeDTO);
+		HashMap<String, Long> map = new HashMap<String, Long>();
+		map.put("startRow", 1L);
+		map.put("lastRow", 10L);
+		return sqlSession.selectList(NAMESPACE+"noticeList", map);
 	}
 	
 	public NoticeDTO getSelect(NoticeDTO noticeDTO) throws Exception {

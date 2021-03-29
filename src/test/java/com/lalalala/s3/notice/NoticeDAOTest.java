@@ -31,27 +31,32 @@ public class NoticeDAOTest extends MyAbstractTest {
 		assertNotNull(noticeDTO);
 	}
 	
-//	@Test
+	@Test
 	public void setInsert() throws Exception {
-		NoticeDTO noticeDTO = new NoticeDTO();
-		noticeDTO.setName("admin");
-		noticeDTO.setTitle("d");
-		noticeDTO.setContents("dd");
-		int result = noticeDAO.setInsert(noticeDTO);
-		assertEquals(1, result);
+		for(int i=0; i<120; i++) {
+			NoticeDTO noticeDTO = new NoticeDTO();
+			noticeDTO.setName("admin" + i);
+			noticeDTO.setTitle("d" + i);
+			noticeDTO.setContents("dd" + i);
+			int result = noticeDAO.setInsert(noticeDTO);
+//			assertEquals(1, result);
+			if(i%10 == 0) {
+				Thread.sleep(500);
+			}
+		}
 	}
 	
 //	@Test
 	public void setUpdate() throws Exception {
 		NoticeDTO noticeDTO = new NoticeDTO();
 		noticeDTO.setNum(3);
-		noticeDTO.setTitle("c");
-		noticeDTO.setContents("cc");
+		noticeDTO.setTitle("rr");
+		noticeDTO.setContents("rrrr");
 		int result = noticeDAO.setUpdate(noticeDTO);
 		assertEquals(1, result);
 	}
 	
-	@Test
+//	@Test
 	public void setDelete() throws Exception {
 		NoticeDTO noticeDTO = new NoticeDTO();
 		noticeDTO.setNum(4);

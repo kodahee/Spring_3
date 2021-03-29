@@ -60,7 +60,7 @@ public class NoticeController {
 		if(result > 0) {
 			session.setAttribute("notice", noticeDTO);
 		}
-		return "redirect:noticeSelect";
+		return "redirect:noticeList";
 	}
 
 }
