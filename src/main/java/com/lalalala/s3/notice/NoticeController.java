@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping(value = "/notice/*")
@@ -17,9 +18,12 @@ public class NoticeController {
 	private NoticeService noticeService;
 	
 	@RequestMapping(value = "noticeList")
-	public void getList(NoticeDTO noticeDTO, HttpSession session) throws Exception {
-		List<NoticeDTO> ar = noticeService.getList(noticeDTO);
-		session.setAttribute("list", ar);
+	public ModelAndView getList(long curPage) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		List<NoticeDTO> ar = noticeService.getList(curPage);
+		mv.addObject("list", ar);
+		mv.setViewName("notice/noticeList");
+		return mv;
 	}
 	
 	@RequestMapping(value = "noticeSelect")
