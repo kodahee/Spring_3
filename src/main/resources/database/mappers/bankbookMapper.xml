@@ -18,7 +18,14 @@
 	<select id="getList" resultType="com.lalalala.s3.bankbook.BankBookDTO" parameterType="Pager">
 		SELECT * FROM 
 		(SELECT rownum R, N.*
-		FROM (SELECT * FROM bankbook WHERE bookNumber > 0 ORDER BY bookNumber desc) N)
+		FROM (SELECT * FROM bankbook 
+		WHERE 
+		<choose>
+			<when test="kind = 'BookName'">bookName</when>
+			<when test="kind = 'BookNumber'">bookNumber</when>
+			<when test="kind = 'BookSale'">bookSale</when>
+		</choose>
+		LIKE '%'||#{search}||'%' AND bookNumber > 0 ORDER BY bookNumber desc) N)
 		WHERE R BETWEEN #{startRow} AND #{lastRow}
 	</select>
 	
@@ -32,6 +39,13 @@
 	
 	<select id="getTotalCount" resultType="Long">
 		SELECT COUNT(bookNumber) FROM BANKBOOK
+		WHERE
+		<choose>
+			<when test="kind == 'BookName'">bookName</when>
+			<when test="kind == 'BookNumber'">bookNumber</when>
+			<otherwise>bookSale</otherwise>
+		</choose>
+		like '%'||#{search}||'%' and bookNumber > 0
 	</select>
 	
 </mapper>

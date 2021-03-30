@@ -39,9 +39,6 @@
 			</tbody>
 
 		</table>
-		<c:if test="${member.name eq 'admin'}">
-			<a class="btn btn-primary" href="./noticeInsert" role="button">글작성</a>
-		</c:if>
 	</div>
 
 	<div class="container">
@@ -71,7 +68,7 @@
 					<select class="form-control" name="kind" id="sel1">
 						<option>Title</option>
 						<option>Contents</option>
-						<option>Writer</option>
+						<option>Name</option>
 					</select>
 				</div>
 				<input type="text" class="form-control" name="search" placeholder="Search">
@@ -80,7 +77,10 @@
 				</div>
 			</form>
 		</div>
-
+		
+		<c:if test="${member.name eq 'admin'}">
+			<a href="./noticeInsert" class="btn btn-primary" role="button">Write</a>
+		</c:if>
 	</div>
 
 

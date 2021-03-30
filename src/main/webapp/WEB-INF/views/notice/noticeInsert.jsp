@@ -22,7 +22,7 @@
 			</div> --%>
 			<div class="form-group">
 				<label for="exampleFormControlInput1">Name</label> 
-				<input class="form-control form-control-lg" type="text" name="name">
+				<input class="form-control form-control-lg" type="text" value="${member.name}" id="name" name="name" readonly="readonly">
 			</div>
 			<div class="form-group">
 				<label for="exampleFormControlInput1">Title</label> 
