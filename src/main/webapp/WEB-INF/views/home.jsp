@@ -11,6 +11,12 @@
 
 <c:import url="./template/bootStrap.jsp"></c:import>
 
+<!-- <script type="text/javascript">
+	alert('Hello World');
+</script> -->
+
+<link rel="stylesheet" href="./resources/css/test.css">
+
 <title>Hello, world!</title>
 </head>
 <body>
@@ -40,7 +46,9 @@
 			<div class="col-sm-8">
 				<h2>TITLE HEADING</h2>
 				<h5>Title description, Dec 7, 2017</h5>
-				<div class="fakeimg">Fake Image</div>
+				<div class="fakeimg">
+				<img alt="jjung images" src="./resources/images/img1.jpeg" width="320px" height="400px">
+				</div>
 				<p>Some text..</p>
 				<p>Sunt in culpa qui officia deserunt mollit anim id est laborum
 					consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -138,6 +146,10 @@
 			jsp: 글 리스트로 이동
 	
  -->
+
+
+<script type="text/javascript" src="./resources/js/test.js"></script>
+ 
 
 </body>
 </html>

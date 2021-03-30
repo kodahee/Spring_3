@@ -13,6 +13,9 @@
 	<c:import url="../template/header.jsp"></c:import>
 
 	<div class="container">
+		<!-- <div>
+			<img alt="jjung" src="../resources/images/img1.jpeg">
+		</div> -->
 		<h2>Notice List</h2>
 
 		<table class="table table-hover">
