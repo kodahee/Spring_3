@@ -43,6 +43,8 @@ public class BankBookDAO {
 	// getList
 	// bankbook table의 모든 데이터 조회 후 리턴
 	public List<BankBookDTO> getList(Pager pager) throws Exception {
+		System.out.println(pager.getStartRow());
+		System.out.println(pager.getLastRow());
 		return sqlSession.selectList(NAMESPACE+".getList", pager);
 	}
 
