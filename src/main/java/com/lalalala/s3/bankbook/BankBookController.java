@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.lalalala.s3.util.Pager;
+
 @Controller
 @RequestMapping(value = "/bankbook/*")
 public class BankBookController {
@@ -54,9 +56,13 @@ public class BankBookController {
 	}
 	
 	@RequestMapping("bankbookList")		// url 주소 하나만 쓴다면 value 생략 가능
-	public void getList(Model model) throws Exception {
-		List<BankBookDTO> ar = bankbookService.getList();
-		model.addAttribute("list", ar);
+	public ModelAndView getList(Pager pager) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		List<BankBookDTO> ar = bankbookService.getList(pager);
+		mv.addObject("list", ar);
+		mv.setViewName("bankbook/bankbookList");
+		mv.addObject("pager", pager);
+		return mv;
 	}
 	
 	@RequestMapping(value = "bankbookSelect")

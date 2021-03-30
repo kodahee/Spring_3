@@ -27,4 +27,8 @@
 		UPDATE BANKBOOK SET BOOKNAME = #{bookName}, BOOKRATE = #{bookRate}, BOOKSALE = #{bookSale} WHERE BOOKNUMBER = #{bookNumber}
 	</update>
 	
+	<select id="getTotalCount" resultType="Long">
+		SELECT COUNT(bookNumber) FROM BANKBOOK
+	</select>
+	
 </mapper>
