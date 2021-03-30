@@ -9,7 +9,13 @@
 	<select id="noticeList" parameterType="Pager" resultType="NoticeDTO">
 		SELECT * FROM 
 		(SELECT rownum R, N.*
-		FROM (SELECT * FROM NOTICE WHERE NUM > 0 ORDER BY NUM desc) N)
+		FROM (SELECT * FROM NOTICE WHERE 
+		<choose>
+			<when test="kind == 'Name'">name</when>
+			<when test="kind == 'Contents'">contents</when>
+			<otherwise>title</otherwise>
+		</choose>
+		LIKE '%'||#{search}||'%' AND NUM > 0 ORDER BY NUM desc) N)
 		WHERE R BETWEEN #{startRow} AND #{lastRow}
 	</select>
 	
@@ -29,8 +35,15 @@
 		DELETE FROM notice WHERE num = #{num}
 	</delete>
 	
-	<select id="noticeCount" resultType="Long">
+	<select id="noticeCount" resultType="Long" parameterType="Pager">
 		select count(num) from notice
+		where 
+		<choose>
+			<when test="kind == 'Name'">name</when>
+			<when test="kind == 'Contents'">contents</when>
+			<otherwise>title</otherwise>
+		</choose>
+		like '%'||#{search}||'%' and num > 0
 	</select>
 
 
