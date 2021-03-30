@@ -15,8 +15,11 @@
 		select * from bankbook where bookNumber=#{bookNumber}
 	</select>
 	
-	<select id="getList" resultType="com.lalalala.s3.bankbook.BankBookDTO">
-		select * from bankbook order by bookNumber desc
+	<select id="getList" resultType="com.lalalala.s3.bankbook.BankBookDTO" parameterType="Pager">
+		SELECT * FROM 
+		(SELECT rownum R, N.*
+		FROM (SELECT * FROM bankbook WHERE bookNumber > 0 ORDER BY bookNumber desc) N)
+		WHERE R BETWEEN #{startRow} AND #{lastRow}
 	</select>
 	
 	<delete id="setDelete" parameterType="com.lalalala.s3.bankbook.BankBookDTO">

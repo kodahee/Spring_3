@@ -17,7 +17,7 @@ public class BankBookDAO {
 	private final String NAMESPACE = "com.lalalala.s3.bankbook.BankBookDAO";
 	
 	public Long getTotalCount() throws Exception {
-		return sqlSession.selectOne(NAMESPACE+"getTotalCount");
+		return sqlSession.selectOne(NAMESPACE+".getTotalCount");
 	}
 	
 	public int setUpdate(BankBookDTO bankbookDTO) throws Exception {
