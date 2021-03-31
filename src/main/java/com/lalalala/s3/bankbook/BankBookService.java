@@ -38,7 +38,7 @@ public class BankBookService {		// annocation, xml에 설정
 		pager.setLastRow(lastRow);
 
 		// 1. totalCount
-		long totalCount = bankbookDAO.getTotalCount();
+		long totalCount = bankbookDAO.getTotalCount(pager);
 
 		// 2. totalPage
 		long totalPage = totalCount / perPage;
