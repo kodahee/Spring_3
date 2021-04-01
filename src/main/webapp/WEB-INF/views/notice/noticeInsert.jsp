@@ -15,7 +15,7 @@
 	<div class="container">
 		<h2>Notice Insert Page</h2>
 
-		<form action="./noticeInsert" method="post">
+		<form id="frm" action="./noticeInsert" method="post">
 			<%-- <div class="form-group">
 				<input class="form-control" type="text"
 					placeholder="${dto.name}" readonly>
@@ -32,13 +32,11 @@
 				<label for="exampleFormControlTextarea1">Contents</label>
 				<textarea class="form-control" id="contents" rows="10" name="contents"></textarea>
 			</div>
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-primary" onclick="insertCheck()">Submit</button>
-					<input type="button" value="WRITE" class="btn btn-primary" onclick="insertCheck()">
-					<input type="button" value="Write" class="btn btn-primary">
-				</div>
-			</div>
+			
+			<!-- <button type="submit" class="btn btn-primary" onclick="insertCheck()">Submit</button>
+			<input type="button" value="WRITE" class="btn btn-primary" onclick="insertCheck()"> -->
+			<input type="button" value="Write" id="btn" class="btn btn-primary">
+
 		</form>
 	</div>
 	
