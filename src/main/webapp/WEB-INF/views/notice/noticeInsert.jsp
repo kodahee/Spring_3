@@ -26,7 +26,7 @@
 			</div>
 			<div class="form-group">
 				<label for="exampleFormControlInput1">Title</label> 
-				<input class="form-control form-control-lg" type="text" name="title">
+				<input class="form-control form-control-lg" type="text" name="title"id="title">
 			</div>
 			<div class="form-group">
 				<label for="exampleFormControlTextarea1">Contents</label>
@@ -36,6 +36,7 @@
 				<div class="col-sm-offset-2 col-sm-10">
 					<button type="submit" class="btn btn-primary" onclick="insertCheck()">Submit</button>
 					<input type="button" value="WRITE" class="btn btn-primary" onclick="insertCheck()">
+					<input type="button" value="Write" class="btn btn-primary">
 				</div>
 			</div>
 		</form>

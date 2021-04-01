@@ -5,6 +5,8 @@
 let id = document.getElementById("id");
 let pw = document.getElementById("pw");
 let pw2 = document.getElementById("pw2");
+let btn = document.getElementById("btn");
+let check = document.getElementById("check");
 
 id.addEventListener("blur", function() {
 	
@@ -41,6 +43,10 @@ pw.addEventListener("blur", function() {
 	
 });
 
+pw.addEventListener("change", function() {	// 지웠다가 똑같은걸 써도 내용이 바뀐건 아니기 때문에 실행 x
+	alert("change test");
+});
+
 pw2.addEventListener("blur", function() {
 
 	// 메세지 출력 후 칸 비움
@@ -48,9 +54,25 @@ pw2.addEventListener("blur", function() {
 		
 	if(pw.value != pw2.value) {
 		pw2.value = "";
+		c = "r2";
+	} else {
+		message = "";
 	}
 	
 	let pwResult2 = document.getElementById("pwResult2");
 	pwResult2.innerHTML = message;
 	
+});
+
+btn.addEventListener("click", function() {
+	//id.focus();
+	
+	// 조건이 만족하면
+	let frm = document.getElementById("frm");
+	frm.submit();
+});
+
+check.addEventListener("click", function() {
+	alert("check test");
+	return false;
 })

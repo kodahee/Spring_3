@@ -23,7 +23,7 @@
 
 	<div class="container">
 		<h2>Member Join Page</h2>
-		<form action="./memberJoin", method="post">
+		<form id="frm" action="./memberJoin", method="post">
 			<div class="form-group">
 				<label for="id">ID</label> 
 				<input type="text" class="form-control" id="id" aria-describedby="idHelp" name="id"> 
@@ -67,8 +67,9 @@
 				<input type="checkbox" class="form-check-input" id="exampleCheck1">
 				<label class="form-check-label" for="exampleCheck1">Check me out</label>
 			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" class="btn btn-primary" id="check">Submit</button>
 			<input type="button" value="JOIN" class="btn btn-primary">
+			<input type="button" id = "btn" value="EVENT" class="btn btn-primary">
 		</form>
 	</div>
 	
