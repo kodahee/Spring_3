@@ -18,14 +18,22 @@
 			<div class="form-group">
 				<label for="id">ID</label> 
 				<input type="text" class="form-control" id="id" aria-describedby="idHelp" name="id"> 
+				<!-- ID 6글자 이상 -->
 			</div>
 			<div class="form-group">
 				<label for="pw">Password</label> 
 				<input type="password"class="form-control" id="pw" name="pw">
+				<!-- PW 8글자 이상 -->
+			</div>
+			<div class="form-group">
+				<label for="pw">Password Check</label> 
+				<input type="password"class="form-control" id="pw2" name="pw">
+				<!-- PW 두개는 일치 -->
 			</div>
 			<div class="form-group">
 				<label for="name">Name</label> 
 				<input type="text" class="form-control" id="name" name="name"> 
+				<!-- 비어있으면 안됨 -->
 			</div>
 			<div class="form-group">
 				<label for="phone">Phone</label> 
@@ -33,16 +41,19 @@
 				<small id="phoneHelp" class="form-text text-muted">
 					- 를 포함하여 작성해주세요.
 				</small>
+				<!-- 비어있으면 안됨 -->
 			</div>
 			<div class="form-group">
 				<label for="email">Email</label> 
 				<input type="text" class="form-control" id="email" name="email"> 
+				<!-- 비어있으면 안됨 -->
 			</div>
 			<div class="form-group form-check">
 				<input type="checkbox" class="form-check-input" id="exampleCheck1">
 				<label class="form-check-label" for="exampleCheck1">Check me out</label>
 			</div>
 			<button type="submit" class="btn btn-primary">Submit</button>
+			<input type="button" value="JOIN" class="btn btn-primary">
 		</form>
 	</div>
 	

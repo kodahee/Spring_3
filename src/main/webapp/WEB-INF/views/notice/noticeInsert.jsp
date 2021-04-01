@@ -34,10 +34,13 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="submit" class="btn btn-primary" onclick="insertCheck()">Submit</button>
+					<input type="button" value="WRITE" class="btn btn-primary" onclick="insertCheck()">
 				</div>
 			</div>
 		</form>
 	</div>
+	
+	<script type="text/javascript" src="../resources/js/insertCheck.js"></script>
 </body>
 </html>
