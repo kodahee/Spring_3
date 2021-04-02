@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -44,9 +45,19 @@ public class NoticeController {
 	}
 	
 	@RequestMapping(value = "noticeInsert", method = RequestMethod.POST)
-	public String setInsert(NoticeDTO noticeDTO, HttpSession session) throws Exception {
+	public String setInsert(NoticeDTO noticeDTO, Model model) throws Exception {
 		int result = noticeService.setInsert(noticeDTO);
-		return "redirect:noticeList";
+		
+		String message = "등록 실패";
+		
+		if(result > 0) {
+			message = "등록 성공";
+		}
+		
+		model.addAttribute("msg", message);
+		model.addAttribute("path", "./noticeList");
+		
+		return "common/commonResult";
 	}
 	
 	@RequestMapping(value = "noticeDelete")

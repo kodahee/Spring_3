@@ -5,9 +5,13 @@
 let id = document.getElementById("id");
 let pw = document.getElementById("pw");
 let pw2 = document.getElementById("pw2");
+let etc = document.getElementsByClassName("etc");
 let btn = document.getElementById("btn");
 let check = document.getElementById("check");
 
+let result = false;
+
+// --------------------- ID Check -------------------------
 id.addEventListener("blur", function() {
 	
 	// id
@@ -25,6 +29,7 @@ id.addEventListener("blur", function() {
 
 });
 
+// --------------------- PW Check -------------------------
 pw.addEventListener("blur", function() {
 	
 		
@@ -47,6 +52,7 @@ pw.addEventListener("change", function() {	// 지웠다가 똑같은걸 써도 �
 	alert("change test");
 });
 
+// --------------------- PW Equal Check -------------------------
 pw2.addEventListener("blur", function() {
 
 	// 메세지 출력 후 칸 비움
@@ -64,6 +70,42 @@ pw2.addEventListener("blur", function() {
 	
 });
 
+// --------------------- Name Check -------------------------
+name.addEventListener("blur", function() {
+	let message = "이름을 입력하세요.";
+	
+	if(name.value != null) {
+		message = "";
+	}
+	
+	let nameResult = document.getElementById("nameResult");
+	nameResult.innerHTML = message;
+});
+
+// --------------------- Phone Check -------------------------
+phone.addEventListener("blur", function() {
+	let message = "전화번호를 입력해주세요.";
+	
+	if(phone.value != null) {
+		message = "";
+	}
+	
+	let phoneResult = document.getElementById("phoneResult");
+	phoneResult.innerHTML = message;
+});
+
+// --------------------- Email Check -------------------------
+email.addEventListener("blur", function() {
+	let message = "이메일을 입력해주세요.";
+	
+	if(phone.value != null) {
+		message = "";
+	}
+	
+	let emailResult = document.getElementById("emailResult");
+	emailResult.innerHTML = message;
+})
+
 btn.addEventListener("click", function() {
 	//id.focus();
 	
@@ -72,7 +114,7 @@ btn.addEventListener("click", function() {
 	frm.submit();
 });
 
-check.addEventListener("click", function() {
+/*check.addEventListener("click", function() {
 	alert("check test");
 	return false;
-})
+})*/

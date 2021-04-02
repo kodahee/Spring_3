@@ -23,7 +23,7 @@
 
 	<div class="container">
 		<h2>Member Join Page</h2>
-		<form id="frm" action="./memberJoin", method="post">
+		<form id="frm" action="./memberJoin" method="post">
 			<div class="form-group">
 				<label for="id">ID</label> 
 				<input type="text" class="form-control" id="id" aria-describedby="idHelp" name="id"> 
@@ -44,22 +44,22 @@
 			</div>
 			<div class="form-group">
 				<label for="name">Name</label> 
-				<input type="text" class="form-control" id="name" name="name"> 
+				<input type="text" class="form-control etc" id="name" name="name"> 
 				<!-- 비어있으면 안됨 -->
 				<h4 id="nameResult"></h4>
 			</div>
 			<div class="form-group">
 				<label for="phone">Phone</label> 
-				<input type="text" class="form-control" id="phone" aria-describedby="phoneHelp" name="phone"> 
+				<input type="text" class="form-control etc" id="phone" aria-describedby="phoneHelp" name="phone"> 
 				<small id="phoneHelp" class="form-text text-muted">
 					- 를 포함하여 작성해주세요.
 				</small>
-				<h4 id="phoneResult"></h4>
 				<!-- 비어있으면 안됨 -->
+				<h4 id="phoneResult"></h4>
 			</div>
 			<div class="form-group">
 				<label for="email">Email</label> 
-				<input type="text" class="form-control" id="email" name="email"> 
+				<input type="text" class="form-control etc" id="email" name="email"> 
 				<!-- 비어있으면 안됨 -->
 				<h4 id="emailResult"></h4>
 			</div>
@@ -67,9 +67,9 @@
 				<input type="checkbox" class="form-check-input" id="exampleCheck1">
 				<label class="form-check-label" for="exampleCheck1">Check me out</label>
 			</div>
-			<button type="submit" class="btn btn-primary" id="check">Submit</button>
-			<input type="button" value="JOIN" class="btn btn-primary">
-			<input type="button" id = "btn" value="EVENT" class="btn btn-primary">
+			<!-- <button type="submit" class="btn btn-primary" id="check">Submit</button>
+			<input type="button" value="JOIN" class="btn btn-primary"> -->
+			<input type="button" id = "btn" value="JOIN" class="btn btn-primary">
 		</form>
 	</div>
 	
