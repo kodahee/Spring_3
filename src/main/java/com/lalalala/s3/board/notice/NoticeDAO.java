@@ -1,4 +1,4 @@
-package com.lalalala.s3.notice;
+package com.lalalala.s3.board.notice;
 
 import java.util.HashMap;
 import java.util.List;
@@ -15,7 +15,7 @@ public class NoticeDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	private final String NAMESPACE = "com.lalalala.s3.notice.NoticeDAO.";
+	private final String NAMESPACE = "com.lalalala.s3.board.notice.NoticeDAO.";
 	
 	public List<NoticeDTO> getList(Pager pager) throws Exception {
 //		HashMap<String, Long> map = new HashMap<String, Long>();
