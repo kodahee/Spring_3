@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,13 +10,14 @@
 </head>
 <body>
 
+
 	<c:import url="../template/header.jsp"></c:import>
 
 	<div class="container">
 		<!-- <div>
 			<img alt="jjung" src="../resources/images/img1.jpeg">
 		</div> -->
-		<h2>Notice List</h2>
+		<h2>${board} List</h2>
 
 		<table class="table table-hover">
 			<thead>
@@ -33,7 +34,7 @@
 				<c:forEach items="${list}" var="list">
 					<tr>
 						<td>${list.num}</td>
-						<td><a href="./noticeSelect?num=${list.num}">${list.title}</a></td>
+						<td><a href="./${board}Select?num=${list.num}">${list.title}</a></td>
 						<td>${list.name}</td>
 						<td>${list.regDate}</td>
 						<td>${list.hit}</td>
@@ -44,6 +45,7 @@
 		</table>
 	</div>
 
+<%-- 
 	<div class="container">
 		<ul class="pagination">
 			<c:if test="${pager.pre}">
@@ -80,11 +82,12 @@
 				</div>
 			</form>
 		</div>
-		
+ --%>	
 		<c:if test="${member.name eq 'admin'}">
-			<a href="./noticeInsert" class="btn btn-primary" role="button">Write</a>
+			<a href="./${board}Insert" class="btn btn-primary" role="button">Write</a>
 		</c:if>
 	</div>
+
 
 
 </body>

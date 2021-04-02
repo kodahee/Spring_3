@@ -13,9 +13,9 @@
 	<c:import url="../template/header.jsp"></c:import>
 
 	<div class="container">
-		<h2>Notice Insert Page</h2>
+		<h2>${board} Insert Page</h2>
 
-		<form id="frm" action="./noticeInsert" method="post">
+		<form id="frm" action="./${board}Insert" method="post">
 			<%-- <div class="form-group">
 				<input class="form-control" type="text"
 					placeholder="${dto.name}" readonly>

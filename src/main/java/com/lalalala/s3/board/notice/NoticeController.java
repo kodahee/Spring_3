@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.lalalala.s3.board.BoardDTO;
 import com.lalalala.s3.util.Pager;
 
 @Controller
@@ -25,28 +26,35 @@ public class NoticeController {
 	public ModelAndView getList(Pager pager) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		System.out.println(pager.getCurPage());
-		List<NoticeDTO> ar = noticeService.getList(pager);
-		//List<NoticeDTO> ar = noticeService.getList(pager);
+		List<BoardDTO> ar = noticeService.getList(pager);
 		mv.addObject("list", ar);
-		mv.setViewName("notice/noticeList");
+		mv.setViewName("board/boardList");
+		mv.addObject("board", "notice");
 		mv.addObject("pager", pager);
 		return mv;
 	}
 	
 	@RequestMapping(value = "noticeSelect")
-	public void getSelect(NoticeDTO noticeDTO, HttpSession session) throws Exception {
-		noticeDTO = noticeService.getSelect(noticeDTO);
-		session.setAttribute("notice", noticeDTO);
+	public ModelAndView getSelect(BoardDTO boardDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		boardDTO = noticeService.getSelect(boardDTO);
+		mv.addObject("board", boardDTO);
+		mv.addObject("board", "notice");
+		mv.setViewName("boad/boadSelect");
+		return mv;
 	}
 	
 	@RequestMapping(value = "noticeInsert")
-	public void setInsert() throws Exception {
-		
+	public ModelAndView setInsert() throws Exception {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("board/boardInsert");
+		mv.addObject("board", "notice");
+		return mv;
 	}
 	
 	@RequestMapping(value = "noticeInsert", method = RequestMethod.POST)
-	public String setInsert(NoticeDTO noticeDTO, Model model) throws Exception {
-		int result = noticeService.setInsert(noticeDTO);
+	public String setInsert(BoardDTO boardDTO, Model model) throws Exception {
+		int result = noticeService.setInsert(boardDTO);
 		
 		String message = "등록 실패";
 		

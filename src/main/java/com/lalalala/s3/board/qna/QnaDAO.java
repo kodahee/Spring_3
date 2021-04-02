@@ -1,4 +1,4 @@
-package com.lalalala.s3.board.notice;
+package com.lalalala.s3.board.qna;
 
 import java.util.List;
 
@@ -11,17 +11,17 @@ import com.lalalala.s3.board.BoardDTO;
 import com.lalalala.s3.util.Pager;
 
 @Repository
-public class NoticeDAO implements BoardDAO {
+public class QnaDAO implements BoardDAO {
 	
 	@Autowired
 	private SqlSession sqlSession;
 	
-	private final String NAMESPACE = "com.lalalala.s3.board.notice.NoticeDAO.";
-
+	private final String NAMESPACE = "com.lalalala.s3.board.qna.QnaDAO.";
+	
 	@Override
 	public List<BoardDTO> getList(Pager pager) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.selectList(NAMESPACE+"getList", pager);
+		return sqlSession.selectList(NAMESPACE+"getList");
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class NoticeDAO implements BoardDAO {
 	@Override
 	public BoardDTO getSelect(BoardDTO boardDTO) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.selectOne(NAMESPACE+"getSelect", boardDTO);
+		return null;
 	}
 
 	@Override
@@ -43,23 +43,21 @@ public class NoticeDAO implements BoardDAO {
 	}
 
 	@Override
-	public int setInsert(BoardDTO boardDTO) throws Exception {
+	public int setInset(BoardDTO boardDTO) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.insert(NAMESPACE+"setInsert", boardDTO);
+		return 0;
 	}
 
 	@Override
 	public int setUpdate(BoardDTO boardDTO) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.update(NAMESPACE+"setUpdate", boardDTO);
+		return 0;
 	}
 
 	@Override
 	public int setDelete(BoardDTO boardDTO) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.delete(NAMESPACE+"setDelete", boardDTO);
+		return 0;
 	}
-	
-	
 
 }
