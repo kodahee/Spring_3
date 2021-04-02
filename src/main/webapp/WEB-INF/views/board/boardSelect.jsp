@@ -29,15 +29,20 @@
 
 			<tbody>
 				<tr>
-					<td>${board.num}</td>
-					<td>${board.title}</td>
-					<td>${board.name}</td>
-					<td>${board.regDate}</td>
-					<td>${board.hit}</td>
+					<td>${dto.num}</td>
+					<td>${dto.title}</td>
+					<td>${dto.name}</td>
+					<td>${dto.regDate}</td>
+					<td>${dto.hit}</td>
 				</tr>
 			</tbody>
 
 		</table>
+		
+		<c:if test="${member.name eq 'admin'}">
+			<a href="./${board}Update?num=${dto.num}" class="btn btn-primary" role="button">Update</a>
+			<a href="./${board}Delete?num=${dto.num}" class="btn btn-primary" role="button">Delete</a>
+		</c:if>
 	</div>
 
 

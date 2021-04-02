@@ -21,7 +21,7 @@
 		WHERE R BETWEEN #{startRow} AND #{lastRow}
 	</select>
 	
-	<select id="getSelect" parameterType="NoticeDTO" resultType="NoticeDTO">
+	<select id="getSelect" parameterType="BoardDTO" resultType="NoticeDTO">
 		SELECT * FROM NOTICE WHERE num = #{num}
 	</select>
 	

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,13 +35,13 @@ public class NoticeController {
 		return mv;
 	}
 	
-	@RequestMapping(value = "noticeSelect")
+	@GetMapping("noticeSelect")
 	public ModelAndView getSelect(BoardDTO boardDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		boardDTO = noticeService.getSelect(boardDTO);
-		mv.addObject("board", boardDTO);
+		mv.addObject("dto", boardDTO);
 		mv.addObject("board", "notice");
-		mv.setViewName("boad/boadSelect");
+		mv.setViewName("board/boardSelect");
 		return mv;
 	}
 	
@@ -77,8 +78,11 @@ public class NoticeController {
 	}
 	
 	@RequestMapping(value = "noticeUpdate")
-	public void noticeUpdate() throws Exception {
-		
+	public ModelAndView noticeUpdate(BoardDTO boardDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("board/boardUpdate");
+		mv.addObject("dto", boardDTO);
+		return mv;
 	}
 	
 	@RequestMapping(value = "noticeUpdate", method = RequestMethod.POST)
