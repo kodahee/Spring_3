@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.lalalala.s3.util.Pager;
+import com.lalalala.s3.util.Pager_backUp;
 
 @Controller
 @RequestMapping(value = "/bankbook/*")
@@ -56,7 +56,7 @@ public class BankBookController {
 	}
 	
 	@RequestMapping("bankbookList")		// url 주소 하나만 쓴다면 value 생략 가능
-	public ModelAndView getList(Pager pager) throws Exception {
+	public ModelAndView getList(Pager_backUp pager) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		List<BankBookDTO> ar = bankbookService.getList(pager);
 		mv.addObject("list", ar);

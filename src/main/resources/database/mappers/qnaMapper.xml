@@ -7,8 +7,14 @@
 	<select id="getList" resultType="QnaDTO" parameterType="Pager">
 		select * from
 			(select rownum R, Q.* from
-				(select * from qna order by ref desc, step asc) Q)
-		<!-- where R between #{startRow} and #{lastRow} -->
+				(select * from qna WHERE 
+				<choose>
+					<when test="kind == 'Name'">name</when>
+					<when test="kind == 'Contents'">contents</when>
+					<otherwise>title</otherwise>
+				</choose>
+				LIKE '%'||#{search}||'%' AND NUM > 0 order by ref desc, step asc) Q)
+		where R between #{startRow} and #{lastRow}
 	</select>
 	
 	<insert id="setInsert" parameterType="BoardDTO">
@@ -31,4 +37,14 @@
 		insert into qna values(qna_seq.nextval, #{title}, #{name}, #{contents}, sysdate, 0, #{ref}, #{step}, #{depth})
 	</insert>
 
+	<select id="getTotalCount" resultType="Long" parameterType="Pager">
+		select count(num) from qna
+		where 
+		<choose>
+			<when test="kind == 'Name'">name</when>
+			<when test="kind == 'Contents'">contents</when>
+			<otherwise>title</otherwise>
+		</choose>
+		like '%'||#{search}||'%' and num > 0
+	</select>
 </mapper>
