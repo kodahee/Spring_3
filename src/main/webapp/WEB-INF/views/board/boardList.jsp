@@ -31,13 +31,18 @@
 			</thead>
 
 			<tbody>
-				<c:forEach items="${list}" var="list">
+				<c:forEach items="${list}" var="dto">
 					<tr>
-						<td>${list.num}</td>
-						<td><a href="./${board}Select?num=${list.num}">${list.title}</a></td>
-						<td>${list.name}</td>
-						<td>${list.regDate}</td>
-						<td>${list.hit}</td>
+						<td>${dto.num}</td>
+						<td>
+							<a href="./${board}Select?num=${dto.num}">
+								<c:forEach begin="1" end="${dto.depth}">--</c:forEach>
+								${dto.title}
+							</a>
+						</td>
+						<td>${dto.name}</td>
+						<td>${dto.regDate}</td>
+						<td>${dto.hit}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -28,7 +28,7 @@ public class QnaService implements BoardService {
 	}
 
 	@Override
-	public int setInset(BoardDTO boardDTO) throws Exception {
+	public int setInsert(BoardDTO boardDTO) throws Exception {
 		// TODO Auto-generated method stub
 		return 0;
 	}
