@@ -13,13 +13,10 @@
 	<c:import url="../template/header.jsp"></c:import>
 
 	<div class="container">
-		<h2>${board} Insert Page</h2>
+		<h2>${board} Reply Page</h2>
 
-		<form id="frm" action="./${board}Insert" method="post">
-			<%-- <div class="form-group">
-				<input class="form-control" type="text"
-					placeholder="${dto.name}" readonly>
-			</div> --%>
+		<form id="frm" action="./${board}Reply" method="post">
+			<input type="hidden" name="num" value="${param.num}">
 			<div class="form-group">
 				<label for="exampleFormControlInput1">Name</label> 
 				<input class="form-control form-control-lg" type="text" value="${member.name}" id="name" name="name" readonly="readonly">

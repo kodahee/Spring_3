@@ -34,12 +34,13 @@
 				<c:forEach items="${list}" var="dto">
 					<tr>
 						<td>${dto.num}</td>
-						<td>
-							<a href="./${board}Select?num=${dto.num}">
-								<c:forEach begin="1" end="${dto.depth}">--</c:forEach>
-								${dto.title}
-							</a>
-						</td>
+						<td><a href="./${board}Select?num=${dto.num}">
+						
+						<c:catch>
+						<c:forEach begin="1" end="${dto.depth}">--</c:forEach>
+						</c:catch>
+						${dto.title}
+						</a></td>
 						<td>${dto.name}</td>
 						<td>${dto.regDate}</td>
 						<td>${dto.hit}</td>
