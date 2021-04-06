@@ -88,23 +88,35 @@ public class NoticeController {
 		return mv;
 	}
 	
-	@RequestMapping(value = "noticeUpdate")
-	public ModelAndView noticeUpdate(BoardDTO boardDTO) throws Exception {
+	@GetMapping("noticeUpdate")
+	public ModelAndView setUpdate(BoardDTO boardDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
+		boardDTO = noticeService.getSelect(boardDTO);
+		
 		mv.setViewName("board/boardUpdate");
 		mv.addObject("dto", boardDTO);
+		mv.addObject("board", "notice");
+		
 		return mv;
 	}
 	
-	@RequestMapping(value = "noticeUpdate", method = RequestMethod.POST)
-	public String noticeUpdate(NoticeDTO noticeDTO, HttpSession session) throws Exception {
-		noticeDTO = (NoticeDTO)session.getAttribute("notice");
-		int result = noticeService.setUpdate(noticeDTO);
-		System.out.println("UPDATE : " + result);
-		if(result > 0) {
-			session.setAttribute("notice", noticeDTO);
+	@PostMapping("noticeUpdate")
+	public ModelAndView setUpdate(BoardDTO boardDTO, ModelAndView mv) throws Exception {
+		mv = new ModelAndView();
+		int result = noticeService.setUpdate(boardDTO);
+		
+		String message = "수정 실패";
+		String path = "./noticeList";
+
+		if(result > 0) {		// 성공하면 리스트로 이동
+			mv.setViewName("redirect:./noticeList");
+		} else {				// 실패하면 수정 실패, 리스트로 이동
+			mv.addObject("msg", message);
+			mv.addObject("path", path);
+			mv.setViewName("common/commonResult");
 		}
-		return "redirect:noticeList";
+		
+		return mv;
 	}
 
 }

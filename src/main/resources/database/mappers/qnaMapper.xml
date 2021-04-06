@@ -51,4 +51,8 @@
 	<delete id="setDelete" parameterType="BoardDTO">
 		delete from qna where num = #{num}
 	</delete>
+	
+	<update id="setUpdate" parameterType="BoardDTO">
+		update qna set title=#{title}, contents=#{contents} where num=#{num}
+	</update>
 </mapper>
