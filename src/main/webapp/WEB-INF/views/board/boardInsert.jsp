@@ -22,24 +22,22 @@
 			</div> --%>
 			<div class="form-group">
 				<label for="exampleFormControlInput1">Name</label> 
-				<input class="form-control form-control-lg" type="text" value="${member.name}" id="name" name="name" readonly="readonly">
+				<input class="form-control form-control-lg myCheck" type="text" value="${member.name}" id="name" name="name" readonly="readonly">
 			</div>
 			<div class="form-group">
 				<label for="exampleFormControlInput1">Title</label> 
-				<input class="form-control form-control-lg" type="text" name="title"id="title">
+				<input class="form-control form-control-lg myCheck" type="text" name="title"id="title">
 			</div>
 			<div class="form-group">
 				<label for="exampleFormControlTextarea1">Contents</label>
-				<textarea class="form-control" id="contents" rows="10" name="contents"></textarea>
+				<textarea class="form-control myCheck" id="contents" rows="10" name="contents"></textarea>
 			</div>
 			
-			<!-- <button type="submit" class="btn btn-primary" onclick="insertCheck()">Submit</button>
-			<input type="button" value="WRITE" class="btn btn-primary" onclick="insertCheck()"> -->
-			<input type="submit" value="Write" id="btn" class="btn btn-primary">
+			<input type="button" value="Write" id="btn" class="btn btn-primary">
 
 		</form>
 	</div>
 	
-	<!-- <script type="text/javascript" src="../resources/js/insertCheck.js"></script> -->
+	<script type="text/javascript" src="../resources/jquery/boardInsert.js"></script>
 </body>
 </html>

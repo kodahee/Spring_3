@@ -23,32 +23,34 @@
 
 	<c:import url="./template/header.jsp"></c:import>
 
-	<button onclick="go()">BUTTON</button>
-	<button id="btn">CLICK</button>
-	<button id="btn2">CLICK</button>
+	<button class="b">BUTTON</button>
+	<button id="btn" class="b">CLICK</button>
+	<button id="btn2" class="b">CLICK</button>
 	
-	<h2>version 3</h2>
+	<h2 id="t">version 3</h2>
+	
+	<!-- <div id="result"></div> -->
+	<ol id="result">
+		<li>A</li>
+	</ol>
+	
+	<select id="mon"></select>
 	
 	<script type="text/javascript">
 	
-		let btn = document.getElementById("btn");
-		let btn2 = document.getElementById("btn2");
+		/* $("#btn2").click(function() {
+			$("#result").append('<a href="#">GO</a>');		// 클릭하면 계속 a태그가 늘어남
+		}); */
 		
-		// btn2.addEventListener("click", go);		// go() 라고 해버리면 함수가 바로 실행돼서 함수이름만 써야함
-		btn2.addEventListener("click", function() {
-			alert("btn2");
-			go();
-		}) 
+		$("#btn2").click(function() {
+			$("#result").prepend('<li>GO</li>');		// 클릭하면 계속 a태그가 늘어남
+		});
 		
-		// btn.onclick = go;
-		btn.onclick = function() {
-			alert("익명함수");
-			go();
-		}
-			
-		function go() {
-			alert("hello");
-		}
+		$("#btn").click(function() {
+			for(let i=1; i<13; i++) {
+				$("#mon").append("<option>"+i+"</option>")
+			}
+		});
 		
 		
 	</script>

@@ -68,10 +68,10 @@
 		</div>
 		
 		
-		<!-- <button class="btn btn-danger" id="btn">JOIN</button> -->
-		<input type="submit" id="btn" value="JOIN" class="btn btn-danger">
+		<button class="btn btn-danger" id="btn">JOIN</button>
+		<!-- <input type="button" id="btn" value="JOIN" class="btn btn-danger"> -->
 		
-		<script type="text/javascript" src="../resources/js/memberJoinCheck.js"></script>
+		<script type="text/javascript" src="../resources/jquery/memberJoinCheck.js"></script>
 		
 	</div>
 
