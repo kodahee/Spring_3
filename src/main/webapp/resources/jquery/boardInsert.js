@@ -2,6 +2,14 @@
  * 
  */
 
+
+/*$("#add").click(function() {
+	console.log("add");
+	alert("add");
+	
+});
+*/
+
 $("#btn").click(function() {
 	
 	let result = true;
