@@ -33,7 +33,7 @@
 		UPDATE notice SET title = #{title}, contents = #{contents}, regDate = SYSDATE WHERE num = #{num}
 	</update>
 	
-	<delete id="setDelete" parameterType="NoticeDTO">
+	<delete id="setDelete" parameterType="BoardDTO">
 		DELETE FROM notice WHERE num = #{num}
 	</delete>
 	

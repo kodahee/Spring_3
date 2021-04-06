@@ -19,6 +19,25 @@ public class QnaController {
 	@Autowired
 	private QnaService qnaService;
 	
+	@PostMapping("qnaDelete")
+	public ModelAndView setDelete(BoardDTO boardDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		int result = qnaService.setDelete(boardDTO);
+		
+		String message = "삭제 실패";
+		String path = "./qnaList";
+		
+		if(result > 0) {
+			message = "삭제 성공";
+		}
+		
+		mv.addObject("msg", message);
+		mv.addObject("path", path);
+		mv.setViewName("common/commonResult");
+		
+		return mv;
+	}
+	
 	@PostMapping("qnaReply")
 	public ModelAndView setReply(QnaDTO qnaDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();

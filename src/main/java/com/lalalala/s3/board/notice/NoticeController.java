@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -68,12 +69,23 @@ public class NoticeController {
 		return "common/commonResult";
 	}
 	
-	@RequestMapping(value = "noticeDelete")
-	public String noticeDelete(NoticeDTO noticeDTO, HttpSession session) throws Exception {
-		noticeDTO = (NoticeDTO)session.getAttribute("notice");
-		int result = noticeService.setDelete(noticeDTO);
-		session.invalidate();
-		return "redirect:noticeList";
+	@PostMapping("noticeDelete")
+	public ModelAndView noticeDelete(BoardDTO boardDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		int result = noticeService.setDelete(boardDTO);
+		
+		String message = "삭제 실패";
+		String path = "./noticeList";
+		
+		if(result > 0) {
+			message = "삭제 성공";
+		}
+
+		mv.addObject("msg", message);
+		mv.addObject("path", path);
+		mv.setViewName("common/commonResult");
+		
+		return mv;
 	}
 	
 	@RequestMapping(value = "noticeUpdate")

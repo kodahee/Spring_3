@@ -47,4 +47,8 @@
 		</choose>
 		like '%'||#{search}||'%' and num > 0
 	</select>
+	
+	<delete id="setDelete" parameterType="BoardDTO">
+		delete from qna where num = #{num}
+	</delete>
 </mapper>
