@@ -17,3 +17,14 @@ $("#add").click(function() {
 	}
 	
 });
+
+
+$("#del").click(function() {
+	// $("#files").remove();	// files div 태그까지 삭제
+	$("#files").empty();		// files div 태그만 남아있음
+});
+
+$("#files").on("click", ".delete", function() {
+	$(this).parent().remove();
+	count--;
+});

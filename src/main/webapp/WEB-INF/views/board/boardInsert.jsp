@@ -39,6 +39,7 @@
 			</div>
 			
 			<input type="button" value="Add" id="add" class="btn btn-danger">
+			<input type="button" value="Delete" id="del" class="btn btn-info">
 			<div id="files">
 				<!-- add button을 클릭하면 sample 안에 있는 div 태그가 복사돼서 여기 들어옴
 				최대 5개까지만 -->
@@ -49,10 +50,17 @@
 		</form>
 	</div>
 	<div id="sample">
-		<div class="form-group">
-      		<input type="file" class="form-control-file border" name="file">
-    	</div>
+		<div class="input-group">
+		  <div class="custom-file">
+		    <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+		    <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+		  </div>
+		  <div class="input-group-append delete">
+		    <input class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04" value="Delete">
+		  </div>
+		</div>
 	</div>
+	
 	
 	<script type="text/javascript" src="../resources/jquery/boardInsert.js"></script>
 	<script type="text/javascript" src="../resources/jquery/fileAdd.js"></script>
