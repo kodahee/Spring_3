@@ -27,4 +27,8 @@
 		DELETE FROM MEMBER WHERE ID = #{id}
 	</delete>
 	
+	<insert id="setFileInsert" parameterType="MemberFileDTO">
+		INSERT INTO MEMBERFILE values(fn_seq.nextval, #{id}, #{fileName}, #{originName})
+	</insert>
+	
 </mapper>

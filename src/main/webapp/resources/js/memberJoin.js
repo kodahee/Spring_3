@@ -70,41 +70,7 @@ pw2.addEventListener("blur", function() {
 	
 });
 
-// --------------------- Name Check -------------------------
-name.addEventListener("blur", function() {
-	let message = "이름을 입력하세요.";
-	
-	if(name.value != null) {
-		message = "";
-	}
-	
-	let nameResult = document.getElementById("nameResult");
-	nameResult.innerHTML = message;
-});
 
-// --------------------- Phone Check -------------------------
-phone.addEventListener("blur", function() {
-	let message = "전화번호를 입력해주세요.";
-	
-	if(phone.value != null) {
-		message = "";
-	}
-	
-	let phoneResult = document.getElementById("phoneResult");
-	phoneResult.innerHTML = message;
-});
-
-// --------------------- Email Check -------------------------
-email.addEventListener("blur", function() {
-	let message = "이메일을 입력해주세요.";
-	
-	if(phone.value != null) {
-		message = "";
-	}
-	
-	let emailResult = document.getElementById("emailResult");
-	emailResult.innerHTML = message;
-})
 
 btn.addEventListener("click", function() {
 	//id.focus();

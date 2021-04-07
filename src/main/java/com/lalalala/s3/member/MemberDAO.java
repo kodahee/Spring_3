@@ -12,6 +12,11 @@ public class MemberDAO {
 	
 	private final String NAMESPACE = "com.lalalala.s3.member.MemberDAO.";
 	
+	// setFileInsert
+	public int setFileInsert(MemberFileDTO memberFileDTO) throws Exception {
+		return sqlSession.insert(NAMESPACE+"setFileInsert", memberFileDTO);
+	}
+	
 	public int memberUpdate(MemberDTO memberDTO) throws Exception {
 		// id를 제외하고 나머지 수정
 		return sqlSession.update(NAMESPACE+"memberUpdate", memberDTO);

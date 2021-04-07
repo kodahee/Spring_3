@@ -8,6 +8,7 @@
 	<!-- 별칭 -->
 	<typeAliases>
 		<typeAlias type="com.lalalala.s3.member.MemberDTO" alias="MemberDTO"/>
+		<typeAlias type="com.lalalala.s3.member.MemberFileDTO" alias="MemberFileDTO"/>
 		<typeAlias type="com.lalalala.s3.bankbook.BankBookDTO" alias="BankBookDTO"/>
 		<typeAlias type="com.lalalala.s3.account.AccountDTO" alias="AccountDTO"/>
 		<typeAlias type="com.lalalala.s3.board.notice.NoticeDTO" alias="NoticeDTO"/>

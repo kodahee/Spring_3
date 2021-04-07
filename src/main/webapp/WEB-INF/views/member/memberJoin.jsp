@@ -23,7 +23,7 @@
 
 	<div class="container">
 		<h2>Member Join Page</h2>
-		<form id="frm" action="./memberJoin" method="post">
+		<form id="frm" action="./memberJoin" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="id">ID</label> 
 				<input type="text" class="form-control" id="id" aria-describedby="idHelp" name="id"> 
@@ -63,62 +63,22 @@
 				<!-- 비어있으면 안됨 -->
 				<h4 id="emailResult"></h4>
 			</div>
+			<div class="form-group">
+				<label for="avatar">Avatar</label> 
+				<input type="file" class="form-control etc" id="avatar" name="avatar"> 
+				<!-- 비어있으면 안됨 -->
+			</div>
 			<div class="form-group form-check">
 				<input type="checkbox" class="form-check-input" id="exampleCheck1">
 				<label class="form-check-label" for="exampleCheck1">Check me out</label>
 			</div>
 			<!-- <button type="submit" class="btn btn-primary" id="check">Submit</button>
 			<input type="button" value="JOIN" class="btn btn-primary"> -->
-			<input type="button" id = "btn" value="JOIN" class="btn btn-primary">
+			<input type="submit" id = "btn" value="JOIN" class="btn btn-primary">
 		</form>
 	</div>
 	
-	<script type="text/javascript" src="../resources/js/memberJoin.js"></script>
-	
-	
-	<!-- <form class="form-horizontal" action="./memberJoin" method="post">
-		<div class="form-group">
-			<label class="control-label col-sm-2" for="id">ID</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" id="id"
-					placeholder="Enter ID" name="id">
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="control-label col-sm-2" for="pw">PW</label>
-			<div class="col-sm-10">
-				<input type="password" class="form-control" id="pw"
-					placeholder="Enter Password" name="pw">
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="control-label col-sm-2" for="name">Name</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" id="name"
-					placeholder="Enter Name" name="name">
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="control-label col-sm-2" for="phone">Phone</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" id="phone"
-					placeholder="Enter Phone Number" name="phone">
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="control-label col-sm-2" for="email">Email</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" id="email"
-					placeholder="Enter Email" name="email">
-			</div>
-		</div>
-		
-		<div class="form-group">
-			<div class="col-sm-offset-2 col-sm-10">
-				<button type="submit" class="btn btn-default">Submit</button>
-			</div>
-		</div>
-	</form> -->
+	<!-- <script type="text/javascript" src="../resources/js/memberJoin.js"></script> -->
 
 </body>
 </html>

@@ -13,6 +13,16 @@ public class MemberTest extends MyAbstractTest {
 	@Autowired
 	private MemberDAO memberDAO;
 	
+	@Test
+	public void setFileInsert() throws Exception {
+		MemberFileDTO fileDTO = new MemberFileDTO();
+		fileDTO.setId("choa");
+		fileDTO.setFileName("fileName1");
+		fileDTO.setOriginName("originName1");
+		int result = memberDAO.setFileInsert(fileDTO);
+		assertEquals(1, result);
+	}
+	
 //	@Test
 	public void memberDelete() throws Exception {
 		MemberDTO memberDTO = new MemberDTO();
@@ -21,7 +31,7 @@ public class MemberTest extends MyAbstractTest {
 		assertEquals(1, result);
 	}
 	
-	@Test
+//	@Test
 	public void memberUpdate() throws Exception {
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO.setId("t1");
