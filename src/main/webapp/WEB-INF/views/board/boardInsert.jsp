@@ -38,22 +38,23 @@
 				<textarea class="form-control myCheck" id="contents" rows="10" name="contents"></textarea>
 			</div>
 			
-			<!-- <input type="button" value="Add" id="add" class="btn btn-danger">
+			<input type="button" value="Add" id="add" class="btn btn-danger">
 			<div id="files">
-				add button을 클릭하면 sample 안에 있는 div 태그가 복사돼서 여기 들어옴
-				최대 5개까지만
-			</div> -->
+				<!-- add button을 클릭하면 sample 안에 있는 div 태그가 복사돼서 여기 들어옴
+				최대 5개까지만 -->
+			</div>
 			
 			<input type="button" value="Write" id="btn" class="btn btn-primary">
 
 		</form>
 	</div>
-	<!-- <div id="sample">
+	<div id="sample">
 		<div class="form-group">
       		<input type="file" class="form-control-file border" name="file">
     	</div>
-	</div> -->
+	</div>
 	
 	<script type="text/javascript" src="../resources/jquery/boardInsert.js"></script>
+	<script type="text/javascript" src="../resources/jquery/fileAdd.js"></script>
 </body>
 </html>

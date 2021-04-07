@@ -2,26 +2,18 @@
  * 
  */
 
-
-/*$("#add").click(function() {
-	console.log("add");
-	alert("add");
-	
-});
-*/
-
 $("#btn").click(function() {
 	
 	let result = true;
 	
 	// 배열, each반복문(foreach와 비슷)
 	$(".myCheck").each(function(s1, s2) {
-		console.log(s1);	// index 번호
-		console.log(s2);	// element
-		console.log(this);	// element
+		//console.log(s1);	// index 번호
+		//console.log(s2);	// element
+		//console.log(this);	// element
 		console.log($(s2).val());
 		
-		if($(this).val() != "") {
+		if($(this).val() == "") {
 			result = false;
 		}
 	});

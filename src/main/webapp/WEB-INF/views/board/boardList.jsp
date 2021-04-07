@@ -65,6 +65,7 @@
 				<input type="hidden" name="curPage" value="1" id="curPage">
 				<div class="input-group-prepend">
 					<select class="form-control" name="kind" id="kind">
+						<!-- select에 value는 없고 option에 있음 -->
 						<option class="sel">Title</option>
 						<option class="sel">Contents</option>
 						<option class="sel">Name</option>
@@ -98,7 +99,7 @@
 				$("#frm").submit();
 				
 				/* $("#curPage").val("value", curPage);
-				$("#kind").val(kind);
+				$("#kind").val(kind);		// $("#kind").val(${pager.kind});
 				$("#search").val(search);
 				
 				$("#frm").submit(); */
