@@ -19,9 +19,11 @@
 		  <li class="list-group-item">Name : ${member.name}</li>
 		  <li class="list-group-item">Phone : ${member.phone}</li>
 		  <li class="list-group-item">Email : ${member.email}</li>
+		  <li class="list-group-item">
+		  	<img alt="" src="../resources/upload/member/${member.memberFileDTO.fileName}" width="460px" height="300px">
+		  </li>
 		</ul>
 		
-		<img alt="" src="../resources/upload/member/${member.memberFileDTO.fileName}">
 		
 		<a href="./memberUpdate"  class="btn btn-primary" role="button">수정</a>
 		<a href="./memberDelete" class="btn btn-danger" role="button">탈퇴</a>
