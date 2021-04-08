@@ -2,6 +2,8 @@ package com.lalalala.s3.board;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.lalalala.s3.util.Pager;
 
 public interface BoardDAO {

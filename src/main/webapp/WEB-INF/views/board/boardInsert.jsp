@@ -20,7 +20,7 @@
 	<div class="container">
 		<h2>${board} Insert Page</h2>
 
-		<form id="frm" action="./${board}Insert" method="post">
+		<form id="frm" action="./${board}Insert" method="post" enctype="multipart/form-data">
 			<%-- <div class="form-group">
 				<input class="form-control" type="text"
 					placeholder="${dto.name}" readonly>
@@ -51,13 +51,14 @@
 	</div>
 	<div id="sample">
 		<div class="input-group">
-		  <div class="custom-file">
-		    <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
-		    <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
-		  </div>
-		  <div class="input-group-append delete">
-		    <input class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04" value="Delete">
-		  </div>
+			<div class="custom-file">
+				<input type="file"  id="inputGroupFile04"
+					class="form-control-file border" name="files">
+			</div>
+			<div class="input-group-append delete">
+				<input class="btn btn-outline-secondary" type="button"
+					id="inputGroupFileAddon04" value="Delete">
+			</div>
 		</div>
 	</div>
 	

@@ -11,7 +11,14 @@ public class BoardDTO {
 	private Date regDate;
 	private long hit;
 	
+	private BoardFileDTO boardFileDTO;
 	
+	public BoardFileDTO getBoardFileDTO() {
+		return boardFileDTO;
+	}
+	public void setBoardFileDTO(BoardFileDTO boardFileDTO) {
+		this.boardFileDTO = boardFileDTO;
+	}
 	public long getNum() {
 		return num;
 	}

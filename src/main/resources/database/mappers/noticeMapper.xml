@@ -22,11 +22,18 @@
 	</select>
 	
 	<select id="getSelect" parameterType="BoardDTO" resultType="NoticeDTO">
-		SELECT * FROM NOTICE WHERE num = #{num}
+		SELECT N.*, NF.* 
+		FROM NOTICE N left join noticeFiles NF
+		on N.num = NF.num
+		WHERE N.num = #{num}
+	</select>
+	
+	<select id="getNum" resultType="java.lang.Long">
+		select notice_seq.nextval from dual
 	</select>
 	
 	<insert id="setInsert" parameterType="BoardDTO">
-		INSERT INTO notice values(notice_seq.nextval, #{name}, #{title}, #{contents}, sysdate, 0)
+		INSERT INTO notice values(#{num}, #{name}, #{title}, #{contents}, sysdate, 0)
 	</insert>
 	
 	<update id="setUpdate" parameterType="NoticeDTO">
@@ -48,5 +55,9 @@
 		like '%'||#{search}||'%' and num > 0
 	</select>
 
+	<insert id="setFileInsert" parameterType="BoardFileDTO">
+		insert into noticeFiles values(file_seq.nextval, #{num}, #{fileName}, #{originName})
+	</insert>
+	
 
 </mapper>
