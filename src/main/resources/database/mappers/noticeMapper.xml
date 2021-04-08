@@ -21,12 +21,27 @@
 		WHERE R BETWEEN #{startRow} AND #{lastRow}
 	</select>
 	
-	<select id="getSelect" parameterType="BoardDTO" resultType="NoticeDTO">
+	<select id="getSelect" parameterType="BoardDTO" resultMap="selectResult">
 		SELECT N.*, NF.* 
 		FROM NOTICE N left join noticeFiles NF
 		on N.num = NF.num
 		WHERE N.num = #{num}
 	</select>
+	
+	<resultMap type="NoticeDTO" id="selectResult">
+		<id property="num" column="num"/>
+		<result property="name" column="name"/>
+		<result property="title" column="title"/>
+		<result property="contents" column="contents"/>
+		<result property="regDate" column="regDate"/>
+		<result property="hit" column="hit"/>
+		
+		<collection property="noticeFiles" javaType="java.util.list" ofType="BoardFileDTO">
+			<id property="fileNum" column="fileNum"/>
+			<result property="fileName" column="fileName"/>
+			<result property="originName" column="originName"/>
+		</collection>
+	</resultMap>
 	
 	<select id="getNum" resultType="java.lang.Long">
 		select notice_seq.nextval from dual
