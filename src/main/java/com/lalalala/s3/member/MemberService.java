@@ -32,52 +32,24 @@ public class MemberService {
 	
 	public int memberJoin(MemberDTO memberDTO, MultipartFile avatar, HttpSession session) throws Exception {
 		
-		fileManager.save("member", avatar, session);
+		String fileName = fileManager.save("member", avatar, session);
 		
-		// makePath 호출
+		MemberFileDTO memberFileDTO = new MemberFileDTO();
+		memberFileDTO.setId(memberDTO.getId());
+		memberFileDTO.setOriginName(avatar.getOriginalFilename());
+		memberFileDTO.setFileName(fileName);
+		int result = memberDAO.memberJoin(memberDTO);
+		result = memberDAO.setFileInsert(memberFileDTO);
 		
-		
-		// 4. 저장할 파일명 생성
-		
-		// makeTimeFileName or makeUUIDFileName 호출
-		
-		// 1) time
-//		Calendar cal = Calendar.getInstance();
-//		long time = cal.getTimeInMillis();
-//		String name = avatar.getOriginalFilename();
-//		name = name.substring(name.lastIndexOf("."));
-//
-//		System.out.println("확장자 : "+ name);
-//
-//		name = time + avatar.getOriginalFilename();
-//		System.out.println("최종이름1 : " + name);
-//
-//		name = time + "_" + avatar.getOriginalFilename();
-//		System.out.println("최종이름2 : " + name);
-		
-		// 2) UUID
-//		String fileName = UUID.randomUUID().toString();
-//		fileName = fileName + "_" + avatar.getOriginalFilename();
-//		System.out.println("UUID : " + fileName); 
-		
-		// 5. HDD 에 파일 저장
-		// 목적지 객체
-//		file = new File(file, name); 		// parent : 경로, child : 저장할 이름
-		
-		// 1) FileCopyUtils 클래스의 copy 메서드 사용
-		// FileCopyUtils.copy(avatar.getBytes(), file);
-		
-		// 2) MultipartFile 클래스의 메서드 사용
-//		file = new File(file, fileName);
-//		avatar.transferTo(file);
-		
-		
-		return 0;
-		// return memberDAO.memberJoin(memberDTO);
+		return result;
 	}
 	
 	public MemberDTO memberLogin(MemberDTO memberDTO) throws Exception {
-		return memberDAO.memberLogin(memberDTO);
+		memberDTO = memberDAO.memberLogin(memberDTO);
+		// Mapper에서 Join으로 sql 문을 바꿔서 필요없어짐
+		// MemberFileDTO memberFileDTO = memberDAO.memberLoginFile(memberDTO);
+		// memberDTO.setMemberFileDTO(memberFileDTO);
+		return memberDTO;
 	}
 
 }

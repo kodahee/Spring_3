@@ -8,6 +8,15 @@ public class MemberDTO {
 	private String phone;
 	private String email;
 	
+	private MemberFileDTO memberFileDTO;	// is a 가 성립하면 상속, has a 가 성립하면 DTO
+	
+	
+	public MemberFileDTO getMemberFileDTO() {
+		return memberFileDTO;
+	}
+	public void setMemberFileDTO(MemberFileDTO memberFileDTO) {
+		this.memberFileDTO = memberFileDTO;
+	}
 	public String getId() {
 		return id;
 	}

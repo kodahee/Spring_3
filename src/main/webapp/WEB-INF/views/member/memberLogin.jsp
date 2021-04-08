@@ -34,29 +34,5 @@
 		</form>
 	</div>
 
-
-	<!-- <form class="form-horizontal" action="./memberLogin" method="post">
-		<div class="form-group">
-			<label class="control-label col-sm-2" for="id">ID</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" id="id"
-					placeholder="Enter ID" name="id">
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="control-label col-sm-2" for="pw">PW</label>
-			<div class="col-sm-10">
-				<input type="password" class="form-control" id="pw"
-					placeholder="Enter Password" name="pw">
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="col-sm-offset-2 col-sm-10">
-				<button type="submit" class="btn btn-default">Login</button>
-			</div>
-		</div>
-	</form> -->
-
-
 </body>
 </html>

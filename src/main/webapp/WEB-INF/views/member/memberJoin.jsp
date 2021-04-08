@@ -32,7 +32,7 @@
 			</div>
 			<div class="form-group">
 				<label for="pw">Password</label> 
-				<input type="password"class="form-control" id="pw" name="pw">
+				<input type="password"class="form-control" id="pw">	<!-- name="pw"가 있으면 DB에 배열로 pw가 두번 들어가서 여기는 지워줘야함 -->
 				<!-- PW 8글자 이상 -->
 				<h4 id="pwResult"></h4>
 			</div>

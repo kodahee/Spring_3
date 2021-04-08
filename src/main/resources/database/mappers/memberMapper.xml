@@ -15,8 +15,38 @@
 		insert into member values(#{id}, #{pw}, #{name}, #{phone}, #{email})
 	</insert>
 	
-	<select id="memberLogin" parameterType="MemberDTO" resultType="MemberDTO">
-		SELECT * FROM MEMBER WHERE id=#{id} AND pw=#{pw}
+	<select id="memberLogin" parameterType="MemberDTO" resultMap="memberLoginResult">
+		SELECT M.*, MF.*
+		FROM MEMBER M left join memberFile MF
+		on M.id = MF.id
+		WHERE M.id=#{id} AND M.pw=#{pw}
+	</select>
+	
+	<!-- type == resultType, id == resultMap -->
+	<resultMap type="MemberDTO" id="memberLoginResult">
+		<!-- PK, property -> 멤버변수명 -->
+		<id property="id" column="id" />
+		<!-- PK가 아닌 나머지 컬럼 -->
+		<result property="pw" column="pw"/>
+		<result property="name" column="name"/>
+		<result property="phone" column="phone"/>
+		<result property="email" column="email"/>
+		<!-- join이 하나일때, 1대1조인(부모하나 자식하나일때) -->
+		<association property="memberFileDTO" javaType="MemberFileDTO" resultMap="memberFileResult">
+			
+		</association>
+	</resultMap>
+	
+	<resultMap type="MemberFileDTO" id="memberFileResult">
+		<!-- memberFileDTO 의 PK -->
+		<id property="num" column="num"/>
+		<!-- 나머지, id는 이미 있기 때문에 안써도 됨 -->
+		<result property="fileName" column="fileName"/>
+		<result property="originName" column="originName"/>
+	</resultMap>
+	
+	<select id="memberLoginFile" parameterType="MemberDTO" resultType="MemberFileDTO">
+		select * from memberFile where id = #{id}
 	</select>
 	
 	<update id="memberUpdate" parameterType="MemberDTO">

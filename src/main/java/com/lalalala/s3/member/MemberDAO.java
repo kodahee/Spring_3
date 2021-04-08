@@ -12,6 +12,11 @@ public class MemberDAO {
 	
 	private final String NAMESPACE = "com.lalalala.s3.member.MemberDAO.";
 	
+	// memberFile에서 쓸 id 조회
+	public MemberFileDTO memberLoginFile(MemberDTO memberDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"memberLoginFile", memberDTO);
+	}
+	
 	// setFileInsert
 	public int setFileInsert(MemberFileDTO memberFileDTO) throws Exception {
 		return sqlSession.insert(NAMESPACE+"setFileInsert", memberFileDTO);
