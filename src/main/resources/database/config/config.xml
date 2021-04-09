@@ -15,6 +15,7 @@
 		<typeAlias type="com.lalalala.s3.board.qna.QnaDTO" alias="QnaDTO"/>
 		<typeAlias type="com.lalalala.s3.board.BoardDTO" alias="BoardDTO"/>
 		<typeAlias type="com.lalalala.s3.board.BoardFileDTO" alias="BoardFileDTO"/>
+		<typeAlias type="com.lalalala.s3.board.comments.CommentsDTO" alias="CommentsDTO"/>
 		<typeAlias type="com.lalalala.s3.util.Pager" alias="Pager"/>
 		
 		<typeAlias type="java.lang.Long" alias="Long"/>
