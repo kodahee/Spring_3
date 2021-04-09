@@ -14,6 +14,10 @@ public class CommentsDAO {
 	
 	private String NAMESPACE = "com.lalalala.s3.board.comments.CommentsDAO.";
 	
+	public int setInsert(CommentsDTO commentsDTO) throws Exception {
+		return sqlSession.insert(NAMESPACE+"setInsert", commentsDTO);
+	}
+	
 	public List<CommentsDTO> getList(CommentsDTO commentsDTO) throws Exception {
 		return sqlSession.selectList(NAMESPACE+"getList", commentsDTO);
 	}

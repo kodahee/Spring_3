@@ -10,4 +10,9 @@
 		select * from comments where num=#{num} order by commentNum desc
 	</select>
 	
+	<!-- id setInsert -->
+	<insert id="setInsert" parameterType="CommentsDTO">
+		insert into comments values(notice_seq.nextval, #{num}, #{name}, #{contents}, sysdate)
+	</insert>
+	
 </mapper>
