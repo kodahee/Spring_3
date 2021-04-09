@@ -14,8 +14,8 @@ public class CommentsDAO {
 	
 	private String NAMESPACE = "com.lalalala.s3.board.comments.CommentsDAO.";
 	
-	public List<CommentsDTO> getList(CommentsDTO commnetsDTO) throws Exception {
-		return sqlSession.selectList(NAMESPACE+"getList", commnetsDTO);
+	public List<CommentsDTO> getList(CommentsDTO commentsDTO) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"getList", commentsDTO);
 	}
 
 }

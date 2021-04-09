@@ -6,7 +6,7 @@ public class CommentsDTO {
 	
 	private long commentNum;
 	private long num;
-	private String writer;
+	private String name;
 	private String contents;
 	private Date regDate;
 	
@@ -22,11 +22,11 @@ public class CommentsDTO {
 	public void setNum(long num) {
 		this.num = num;
 	}
-	public String getWriter() {
-		return writer;
+	public String getName() {
+		return name;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getContents() {
 		return contents;

@@ -3,7 +3,7 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
-<mapper namespace="com.lalalala.s3.board.comments.CommentsDTO">
+<mapper namespace="com.lalalala.s3.board.comments.CommentsDAO">
 	
 	<!-- id getList -->
 	<select id="getList" parameterType="CommentsDTO" resultType="CommentsDTO">
