@@ -67,7 +67,7 @@
 		
 		$("#btn2").click(function() {
 			/* location.href="./test"; */
-			$.get("./test", function(data) {		// ajax로 요청을 보냄, get method, url
+			$.get("./test?num=3", function(data) {		// ajax로 요청을 보냄, get method, url
 				console.log(data);
 				$("#d2").html(data);
 			}); 

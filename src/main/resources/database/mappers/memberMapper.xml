@@ -7,6 +7,10 @@
     
 <mapper namespace="com.lalalala.s3.member.MemberDAO">
 
+	<select id="memberIdCheck" parameterType="MemberDTO" resultType="MemberDTO">
+		select id from member where id=#{id}
+	</select>
+
 	<select id="memberSelect" parameterType="MemberDTO" resultType="MemberDTO">
 		SELECT * FROM MEMBER WHERE ID=#{id}
 	</select>

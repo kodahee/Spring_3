@@ -12,6 +12,10 @@ public class MemberDAO {
 	
 	private final String NAMESPACE = "com.lalalala.s3.member.MemberDAO.";
 	
+	public MemberDTO memberIdCheck(MemberDTO memberDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"memberIdCheck", memberDTO);
+	}
+	
 	// memberFile에서 쓸 id 조회
 	public MemberFileDTO memberLoginFile(MemberDTO memberDTO) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"memberLoginFile", memberDTO);

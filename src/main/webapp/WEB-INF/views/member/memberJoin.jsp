@@ -28,7 +28,7 @@
 				<label for="id">ID</label> 
 				<input type="text" class="form-control" id="id" aria-describedby="idHelp" name="id"> 
 				<!-- ID 6글자 이상 -->
-				<h4 id="idResult"></h4>
+				<h4 id="idCheckResult"></h4>
 			</div>
 			<div class="form-group">
 				<label for="pw">Password</label> 
@@ -78,7 +78,7 @@
 		</form>
 	</div>
 	
-	<!-- <script type="text/javascript" src="../resources/js/memberJoin.js"></script> -->
+	<script type="text/javascript" src="../resources/js/memberJoin.js"></script>
 
 </body>
 </html>
