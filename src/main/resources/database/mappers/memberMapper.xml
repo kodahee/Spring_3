@@ -45,7 +45,7 @@
 		<result property="originName" column="originName"/>
 	</resultMap>
 	
-	<select id="memberLoginFile" parameterType="MemberDTO" resultType="MemberFileDTO">
+	<select id="memberLoginFile" parameterType="MemberDTO" resultType="MemberDTO">
 		select * from memberFile where id = #{id}
 	</select>
 	
@@ -60,5 +60,9 @@
 	<insert id="setFileInsert" parameterType="MemberFileDTO">
 		INSERT INTO MEMBERFILE values(fn_seq.nextval, #{id}, #{fileName}, #{originName})
 	</insert>
+	
+	<select id="getMemberFile" parameterType="MemberDTO" resultType="MemberFileDTO">
+		select fileName from memberFile where id = #{id}
+ 	</select>
 	
 </mapper>

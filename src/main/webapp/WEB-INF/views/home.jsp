@@ -61,8 +61,16 @@
 			$("#result").append('<a href="#">GO</a>');		// 클릭하면 계속 a태그가 늘어남
 		}); */
 		
-		$("#btn2").click(function() {
+		/* $("#btn2").click(function() {
 			$("#result").prepend('<li>GO</li>');		// 클릭하면 계속 a태그가 늘어남
+		}); */
+		
+		$("#btn2").click(function() {
+			/* location.href="./test"; */
+			$.get("./test", function(data) {		// ajax로 요청을 보냄, get method, url
+				console.log(data);
+				$("#d2").html(data);
+			}); 
 		});
 		
 		$("#btn").click(function() {

@@ -44,5 +44,10 @@ public class MemberDAO {
 		return sqlSession.selectOne(NAMESPACE+"memberSelect", memberDTO);
 	}
 
+	// 조회
+	// notice, qna 는 list로 리턴
+	public MemberFileDTO getMemberFile(MemberDTO memberDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getMemberFile", memberDTO);
+	}
 
 }
