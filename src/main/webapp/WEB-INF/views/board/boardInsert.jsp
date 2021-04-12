@@ -39,7 +39,7 @@
 			</div>
 			
 			<input type="button" value="Add" id="add" class="btn btn-danger">
-			<div id="files">
+			<div id="files" title="0">
 				<!-- add button을 클릭하면 sample 안에 있는 div 태그가 복사돼서 여기 들어옴
 				최대 5개까지만 -->
 			</div>

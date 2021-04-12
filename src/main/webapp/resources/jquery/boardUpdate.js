@@ -21,6 +21,7 @@ $(".fileDelete").click(function() {
 				if(result > 0) {
 					alert("삭제 성공");
 					$(obj).parent().remove();
+					count--;	// 같은 jsp에 있으면 사용 가능
 				} else {
 					alert("삭제 실패");
 				}

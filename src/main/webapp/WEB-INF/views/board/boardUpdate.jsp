@@ -44,7 +44,7 @@
 			
 			<input type="button" value="Add" id="add" class="btn btn-danger">
 			
-			<div id="files">
+			<div id="files" title="${dto.boardFiles.size()}"></div>
 			
 			<input type="submit" value="Update" id="btn" class="btn btn-primary">
 
