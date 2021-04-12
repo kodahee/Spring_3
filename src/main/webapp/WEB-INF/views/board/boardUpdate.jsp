@@ -20,7 +20,7 @@
 	<div class="container">
 		<h2>${board} Update Page</h2>
 
-		<form id="frm" action="./${board}Update" method="post">
+		<form id="frm" action="./${board}Update" method="post" enctype="multipart/form-data">
 			<input type="hidden" name="num" value="${param.num}">
 			<div class="form-group">
 				<label for="exampleFormControlInput1">Name</label> 

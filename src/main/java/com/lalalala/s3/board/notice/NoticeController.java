@@ -119,9 +119,9 @@ public class NoticeController {
 	}
 	
 	@PostMapping("noticeUpdate")
-	public ModelAndView setUpdate(BoardDTO boardDTO, ModelAndView mv) throws Exception {
+	public ModelAndView setUpdate(BoardDTO boardDTO, ModelAndView mv, MultipartFile [] files) throws Exception {	// sample 에서 files로 이름을 지어놨으니까 files로 받음
 		mv = new ModelAndView();
-		int result = noticeService.setUpdate(boardDTO);
+		int result = noticeService.setUpdate(boardDTO, files);
 		
 		String message = "수정 실패";
 		String path = "./noticeList";

@@ -60,7 +60,7 @@
 	</insert>
 	
 	<update id="setUpdate" parameterType="NoticeDTO">
-		UPDATE notice SET title = #{title}, contents = #{contents}, regDate = SYSDATE WHERE num = #{num}
+		UPDATE notice SET title = #{title}, contents = #{contents} WHERE num = #{num}
 	</update>
 	
 	<delete id="setDelete" parameterType="BoardDTO">
