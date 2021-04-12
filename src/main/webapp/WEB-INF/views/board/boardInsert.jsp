@@ -39,7 +39,6 @@
 			</div>
 			
 			<input type="button" value="Add" id="add" class="btn btn-danger">
-			<input type="button" value="Delete" id="del" class="btn btn-info">
 			<div id="files">
 				<!-- add button을 클릭하면 sample 안에 있는 div 태그가 복사돼서 여기 들어옴
 				최대 5개까지만 -->

@@ -7,6 +7,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:import url="../template/bootStrap.jsp"></c:import>
+<style type="text/css">
+	#sample {
+		display: none;
+	}
+</style>
 </head>
 <body>
 
@@ -37,14 +42,30 @@
 				</div>
 			</c:forEach>
 			
-			<!-- <button type="submit" class="btn btn-primary" onclick="insertCheck()">Submit</button>
-			<input type="button" value="WRITE" class="btn btn-primary" onclick="insertCheck()"> -->
+			<input type="button" value="Add" id="add" class="btn btn-danger">
+			
+			<div id="files">
+			
 			<input type="submit" value="Update" id="btn" class="btn btn-primary">
 
 		</form>
 	</div>
 	
+	<div id="sample">
+		<div class="input-group">
+			<div class="custom-file">
+				<input type="file"  id="inputGroupFile04"
+					class="form-control-file border" name="files">
+			</div>
+			<div class="input-group-append delete">
+				<input class="btn btn-outline-secondary" type="button"
+					id="inputGroupFileAddon04" value="Delete">
+			</div>
+		</div>
+	</div>
+	
 	<script type="text/javascript" src="../resources/jquery/boardUpdate.js"></script>
+	<script type="text/javascript" src="../resources/jquery/fileAdd.js"></script>
 	<!-- <script type="text/javascript" src="../resources/js/insertCheck.js"></script> -->
 </body>
 </html>
