@@ -7,6 +7,14 @@
 <mapper namespace="com.lalalala.s3.board.notice.NoticeDAO">
 
 	<!-- parameter type은 부모타입이어도 상관없지만 result type은 자기자신의 타입이어야함 -->
+	
+	<select id="getFileSelect" parameterType="BoardFileDTO" resultType="BoardFileDTO">
+		select * from noticeFiles where fileNum=#{fileNum}
+	</select>
+	
+	<delete id="setFileDelete" parameterType="BoardFileDTO">
+		delete noticeFiles where fileNum=#{fileNum}
+	</delete>
 
 	<select id="getList" parameterType="Pager" resultType="NoticeDTO">
 		SELECT * FROM 

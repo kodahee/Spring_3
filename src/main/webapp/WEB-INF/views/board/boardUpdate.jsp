@@ -30,6 +30,13 @@
 				<textarea class="form-control" id="contents" rows="10" name="contents">${dto.contents}</textarea>
 			</div>
 			
+			<c:forEach items="${dto.boardFiles}" var="file">
+				<div>
+					<span>${file.originName}</span>
+					<span class="fileDelete" title="${file.fileNum}">X</span>
+				</div>
+			</c:forEach>
+			
 			<!-- <button type="submit" class="btn btn-primary" onclick="insertCheck()">Submit</button>
 			<input type="button" value="WRITE" class="btn btn-primary" onclick="insertCheck()"> -->
 			<input type="submit" value="Update" id="btn" class="btn btn-primary">
@@ -37,6 +44,7 @@
 		</form>
 	</div>
 	
+	<script type="text/javascript" src="../resources/jquery/boardUpdate.js"></script>
 	<!-- <script type="text/javascript" src="../resources/js/insertCheck.js"></script> -->
 </body>
 </html>
