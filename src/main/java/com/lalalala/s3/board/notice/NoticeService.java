@@ -26,6 +26,11 @@ public class NoticeService implements BoardService {
 	@Autowired
 	private HttpSession session;
 	
+	public String setSummerFileUpload(MultipartFile file) throws Exception {
+		String fileName = fileManager.save("notice", file, session);		// 첨부파일과는 다름, 첨부파일과 글에 있는 파일을 서로 다른 곳에 저장해도 됨, 첨부파일이 아니라서 DB에 저장 안함
+		return fileName;
+	}
+	
 	public int setFileDelete(BoardFileDTO boardFileDTO) throws Exception {
 		// fileName을 print
 		// 1. 조회

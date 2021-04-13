@@ -25,6 +25,22 @@ public class NoticeController {
 	@Autowired
 	private NoticeService noticeService;
 	
+	@PostMapping("summerFileUpload")
+	public ModelAndView setsummerFileUpload(MultipartFile file) throws Exception {	// summerFile.js에서 이름을 file 로 했기 때문에 files 안됨
+		ModelAndView mv = new ModelAndView();
+		
+		System.out.println("Summer File Upload");
+		System.out.println(file.getOriginalFilename());
+		
+		String fileName = noticeService.setSummerFileUpload(file);
+		fileName = "../resources/upload/notice/" + fileName;
+
+		mv.addObject("result", fileName);
+		mv.setViewName("common/ajaxResult");
+		
+		return mv;
+	}
+	
 	@GetMapping("fileDelete")
 	public ModelAndView setFileDelete(BoardFileDTO boardFileDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
