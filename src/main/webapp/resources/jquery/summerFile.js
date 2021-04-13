@@ -10,9 +10,22 @@ $("#contents").summernote({
 	      // upload image to server and create imgNode...
 	      // $summernote.summernote('insertNode', imgNode);
 	    	uploadFile(files);
-	    }
+	    },
+		onMediaDelete: function(files) {
+			deleteFile(files);
+		}
 	}
 });
+
+function deleteFile(files) {
+	// 경로명은 새로 잡아야해서 필요 x, 파일명만 필요
+	let fileName = $(files[0]).attr("src");
+	fileName = fileName.substring(fileName.lastIndexOf("/")+1);
+	console.log(fileName);
+	$.post("summerFileDelete", {fileName: fileName}, function(result) {
+		console.log(result);
+	});
+}
 
 function uploadFile(files) {
 	// alert("img upload File function");
@@ -36,5 +49,4 @@ function uploadFile(files) {
 			$("#contents").summernote('insertImage', fileName);
 		}
 	});
-	return result;
 }
