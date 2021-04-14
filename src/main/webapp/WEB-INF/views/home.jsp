@@ -107,6 +107,21 @@
 		$("#btn1").click(function() {
 			$.get("https://jsonplaceholder.typicode.com/users", function(data) {
 				console.log(data);
+				
+				/* for(index in data) {
+					console.log(data[index]);
+					console.log(data[index].username);
+				} */
+				
+				/* for(index of data) {
+					console.log(index.company.name);
+				} */
+				
+				// 첫번째 유저의 lat, lng
+				for(index in data) {
+					console.log(data[0].address.geo.lat);
+					console.log(data[0].address.geo.lng);
+				}
 			});
 		});
 		
