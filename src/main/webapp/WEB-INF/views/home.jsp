@@ -45,6 +45,8 @@
 	<button id="btn" class="b">CLICK</button>
 	<button id="btn2" class="b">CLICK2</button>
 	
+	<input type="text" id="num">
+	
 	<h2 id="t">version 3</h2>
 	
 	<!-- <div id="result"></div> -->
@@ -55,35 +57,28 @@
 	<select id="mon"></select>
 	
 	<div id="d1">
-		<div id="d2"></div>
+		<div id="d2">
+			<!-- title, contents -->
+			<h3 id="d3"></h3>
+			<h3 id="d4"></h3>
+		</div>
 	</div>
 	
 	<div id="map" style="width:500px;height:400px;"></div>
 	
 	<script type="text/javascript">
 	
-		/* $("#btn2").click(function() {
-			$("#result").append('<a href="#">GO</a>');		// 클릭하면 계속 a태그가 늘어남
-		}); */
-		
-		/* $("#btn2").click(function() {
-			$("#result").prepend('<li>GO</li>');		// 클릭하면 계속 a태그가 늘어남
-		}); */
-		
-		/* $("#btn2").click(function() {
-			//location.href="./test"; 
-			$.get("./test?num=3", function(data) {		// ajax로 요청을 보냄, get method, url
-				console.log(data);
-				$("#d2").html(data);
-			}); 
-		});  */
-		
 		$("#btn2").click(function() {
-			$.get("./testJson?name=iu", function(data) {
+			let num = $("#num").val();
+			$.get("https://jsonplaceholder.typicode.com/posts/"+num, function(data) {
+				alert(data);
 				console.log(data);
-				data = data.trim();
+				$("#d3").html(data.title);
+				$("#d4").html(data.body);
+				alert(data.title);
+				/* data = data.trim();
 				data = JSON.parse(data);		// json object가 됨
-				alert(data.name);
+				alert(data.name); */
 			}) ;
 		}); 
 		
