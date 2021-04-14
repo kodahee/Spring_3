@@ -41,7 +41,7 @@
 
 	<c:import url="./template/header.jsp"></c:import>
 
-	<button class="b">BUTTON</button>
+	<button class="b" id="btn1">BUTTON</button>
 	<button id="btn" class="b">CLICK</button>
 	<button id="btn2" class="b">CLICK2</button>
 	
@@ -64,6 +64,11 @@
 		</div>
 	</div>
 	
+	<div id="exchange">
+		<h3 id="krw"></h3>
+		<h3 id="usd"></h3>
+	</div>
+	
 	<div id="map" style="width:500px;height:400px;"></div>
 	
 	<script type="text/javascript">
@@ -83,9 +88,26 @@
 		}); 
 		
 		$("#btn").click(function() {
-			for(let i=1; i<13; i++) {
-				$("#mon").append("<option>"+i+"</option>")
-			}
+			$.ajax({
+				type: "GET",
+				url: "https://api.manana.kr/exchange/price.json",
+				data: {
+					base:"KRW",
+					price:1500,
+					code:"KRW,USD,JPY"
+				}, 
+				success: function(data) {
+					console.log(data);
+					$("#krw").html(data.KRW);
+					$("#usd").html(data.USD);
+				}
+			});
+		});
+		
+		$("#btn1").click(function() {
+			$.get("https://jsonplaceholder.typicode.com/users", function(data) {
+				console.log(data);
+			});
 		});
 		
 		
